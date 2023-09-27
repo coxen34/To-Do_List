@@ -1,0 +1,37 @@
+[
+    {
+        "descripcion": "Tarea1",
+        "creado por": "Rosa",
+        "fecha_creacion": "2023-09-22 18:34:29",
+        "fecha_fin": "2023-10-21",
+        "estado": "pendiente"
+    },
+    {
+        "descripcion": "Tarea2",
+        "creado por": "Albert",
+        "fecha_creacion": "2023-09-22 18:34:29",
+        "fecha_fin": "2023-11-21",
+        "estado": "pendiente"
+    },
+    {
+        "descripcion": "Tarea3",
+        "creado por": "Jana",
+        "fecha_creacion": "2023-09-22 18:34:29",
+        "fecha_fin": "2023-11-21",
+        "estado": "pendiente"
+    },
+    {
+        "descripcion": "Tarea4",
+        "creado por": "Maribel",
+        "fecha_creacion": "2023-09-22 18:34:29",
+        "fecha_fin": "2023-09-21",
+        "estado": "finalizado"
+    },
+    {
+        "descripcion": "Tarea5",
+        "creado por": "Fil",
+        "fecha_creacion": "2023-09-22 18:34:29",
+        "fecha_fin": "2023-09-30",
+        "estado": "en ejecucion"
+    }
+]

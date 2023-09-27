@@ -4,7 +4,8 @@ class TestController extends ApplicationController
 {
 	public function indexAction()
 	{
-		$this->view->message = "hello from test::index";
+		//$this->view->message = "hola qué tal";
+		echo "hello from index action test Controller";
 	}
 	
 	public function checkAction()
