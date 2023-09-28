@@ -1,37 +1,37 @@
 [
     {
-        "descripcion": "Tarea1",
-        "creado por": "Rosa",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-10-21",
-        "estado": "pendiente"
+        "task_description": "Tarea1",
+        "author": "Rosa",
+        "starting_date": "2023-09-22 18:34:29",
+        "end_date": "2023-10-21",
+        "status": "pendiente"
     },
     {
-        "descripcion": "Tarea2",
-        "creado por": "Albert",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-11-21",
-        "estado": "pendiente"
+        "task_description": "Tarea2",
+        "author": "Albert",
+        "starting_date": "2023-09-22 18:34:29",
+        "end_date": "2023-11-21",
+        "status": "pendiente"
     },
     {
-        "descripcion": "Tarea3",
-        "creado por": "Jana",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-11-21",
-        "estado": "pendiente"
+        "task_description": "Tarea3",
+        "author": "Jana",
+        "starting_date": "2023-09-22 18:34:29",
+        "end_date": "2023-11-21",
+        "status": "pendiente"
     },
     {
-        "descripcion": "Tarea4",
-        "creado por": "Maribel",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-09-21",
-        "estado": "finalizado"
+        "task_description": "Tarea4",
+        "author": "Maribel",
+        "starting_date": "2023-09-22 18:34:29",
+        "end_date": "2023-09-21",
+        "status": "finalizado"
     },
     {
-        "descripcion": "Tarea5",
-        "creado por": "Fil",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-09-30",
-        "estado": "en ejecucion"
+        "task_description": "Tarea5",
+        "author": "Fil",
+        "starting_date": "2023-09-22 18:34:29",
+        "end_date": "2023-09-30",
+        "status": "en ejecucion"
     }
 ]

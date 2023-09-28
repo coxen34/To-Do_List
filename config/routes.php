@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Se utiliza para definir las rutas en el sistema.
@@ -14,6 +14,10 @@
 // );
 
 $routes = array(
-	'/test' => 'test#index'
+	'/'		=> 'application#index',
+	'/form' =>	'application#form',
+	'/getAllTasks' =>	'application#getAllTasks'
 	
+
+
 );

@@ -1,0 +1,17 @@
+<?php $dataJson = new TaskModel;
+$dataJ = $dataJson->getAllTasks(); ?>
+<?php if (isset($dataJ)) : ?>
+    Display the data from $dataJ
+    <ul>
+        <?php foreach ($dataJ as $task) : ?>
+            <li><?php echo $task['task_description'];
+                echo $task['author'];
+                echo $task['starting_date'];
+                echo $task['end_date'];
+                echo $task['status']; ?></li>
+        <?php endforeach; ?>
+    </ul>
+<?php else : ?>
+    <!-- Cuándo $dataJ no está disponible -->
+    <p>Archivo no disponible.</p>
+<?php endif; ?>

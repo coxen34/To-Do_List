@@ -1,13 +1,13 @@
 <?php
 
 /**
- * The base controller of the CMS
+ * El controlador base del CMS
  */
 class Controller
 {
 	// defines the view
 	public $view = null;
-	// defines the request
+	// defines the request(solicitud)
 	protected $_request = null;
 	// the current action
 	protected $_action = null;
@@ -15,7 +15,7 @@ class Controller
 	protected $_namedParameters = array();
 	
 	/**
-	 * initializes various things in the controller
+	 * inicializa varias cosas en el controlador
 	 */
 	public function init()
 	{
@@ -26,70 +26,70 @@ class Controller
 	}
 	
 	/**
-	 * These filters are run BEFORE the action is run
+	 * Estos filtros se ejecutan ANTES de ejecutar la acción.
 	 */
 	public function beforeFilters()
 	{
-		// no standard filers
+		// sin declarantes estándar
 	}
 	
 	/**
-	 * These filters are run AFTER the action is run
+	 * Estos filtros se ejecutan DESPUÉS de que se ejecute la acción. Estos filtros se ejecutan DESPUÉS de que se ejecute la acción.
 	 */
 	public function afterFilters()
 	{
-		// no standard filers
+		// sin declarantes estándar
 	}
 	
 	/**
-	 * The main entry point into the controller execution path. The parameter 
-	 * taken is the action to execute.
+	 * El punto de entrada principal a la ruta de ejecución del controlador. El parámetro
+	 * tomada es la acción a ejecutar.
 	 * @param string $action the action to execute
 	 * @throws Exception 
 	 */
 	public function execute($action = 'index')
 	{
-		// stores the current action
+		// almacena la acción actual
 		$this->_action = $action;
 		
-		// initializes the controller
+		// inicializa el conterolador
 		$this->init();
 		
-		// executes the before filters
+		// ejecuta los filtros anteriores
 		$this->beforeFilters();
 		
-		// adds the action suffix to the function to call
+		// agrega el sufijo de acción a la función a llamar
 		$actionToCall = $action.'Action';
 		
-		// executes the action
+		// ejecuta la acción
 		$this->$actionToCall();
 		
-		// executes the after filterss
+		// ejecuta los filtros posteriores
 		$this->afterFilters();
 		
-		// renders the view
+		// representa la vista
 		$this->view->render($this->_getViewScript($action));
 	}
 	
 	/**
-	 * fetches the view script for the given action
+	 * recupera el script de vista para la acción dada
 	 * @param string $action
-	 * @return string the path to the view script
+	 * @return string la ruta al script de vista
 	 */
 	protected function _getViewScript($action)
 	{
-		// fetches the current controller executed
+		// recupera el controlador actual ejecutado
 		$controller = get_class($this);
-		// removes the "Controller" part and adds the action name to the path
+		// elimina la parte "Controlador" y agrega el nombre de la acción a la ruta
 		$script = strtolower(substr($controller, 0, -10) . '/' . $action . '.phtml');
-		// returns the script to render
+		// devuelve el script para renderizar
 		return $script;
 	}
 	
 	/**
-	 * The base url is used if the application is located in a subfolder. Use
-	 * this function when linking to things.
-	 * @return string the baseUrl for the application.
+	 * La URL base se utiliza si la aplicación está ubicada en una subcarpeta. Usar
+	 * esta función al vincular cosas.
+	 * @return string la URL base de la aplicación.
 	 */
 	protected function _baseUrl()
 	{
@@ -97,12 +97,12 @@ class Controller
 	}
 	
 	/**
-	 * Fetches the current request
+	 * Recupera la solicitud actual
 	 * @return Request
 	 */
 	public function getRequest()
 	{
-		// initializes the request object
+		// inicializa el objeto de solicitud
 		if ($this->_request == null) {
 			$this->_request = new Request();
 		}
@@ -111,25 +111,25 @@ class Controller
 	}
 	
 	/**
-	 * A way to access the current request parameters
-	 * @param string $key the key to look for
-	 * @param mixed $default the default value, else null
+	 * Una forma de acceder a los parámetros de solicitud actuales.
+	 * @param string $key la clave a buscar
+	 * @param mixed $default el valor predeterminado, de lo contrario nulo
 	 * @return mixed
 	 */
 	protected function _getParam($key, $default = null)
 	{
-		// tests against the named parameters first
+		// pruebas contra los parámetros nombrados primero
 		if (isset($this->_namedParameters[$key])) {
 			return $this->_namedParameters[$key];
 		}
 		
-		// tests against the GET/POST parameters
+		// pruebas contra los parámetros GET/POST
 		return $this->getRequest()->getParam($key, $default);
 	}
 	
 	/**
-	 * Fetches all the current parameters
-	 * @return array a list of all the parameters
+	 * Obtiene todos los parámetros actuales
+	 * @return array una lista de todos los parámetros
 	 */
 	protected function _getAllParams()
 	{
