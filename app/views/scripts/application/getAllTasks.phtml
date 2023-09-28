@@ -1,7 +1,7 @@
 <?php $dataJson = new TaskModel;
 $dataJ = $dataJson->getAllTasks(); ?>
 <?php if (isset($dataJ)) : ?>
-    Display the data from $dataJ
+    <!-- Display the data from $dataJ -->
     <ul>
         <?php foreach ($dataJ as $task) : ?>
             <li><?php echo $task['task_description'];
