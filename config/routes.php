@@ -16,7 +16,8 @@
 $routes = array(
 	'/'		=> 'application#index',
 	'/form' =>	'application#form',
-	'/getAllTasks' =>	'application#getAllTasks'
+	'/getAllTasks' =>	'application#getAllTasks',
+	'/createTask'=>'application#createTask'
 	
 
 

@@ -33,5 +33,54 @@
         "starting_date": "2023-09-22 18:34:29",
         "end_date": "2023-09-30",
         "status": "en ejecucion"
+    },
+    {
+        "task_description": "Probando inputs",
+        "author": "Rose",
+        "starting_date": "2023-10-01",
+        "end_date": "2023-10-01",
+        "status": "value1"
+    },
+    {
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
+    },
+    {
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
+    },
+    {
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
+    },
+    {
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
+    },
+    {
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Completed"
+    },
+    {
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Completed"
     }
 ]

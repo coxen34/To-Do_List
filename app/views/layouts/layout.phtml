@@ -57,9 +57,9 @@
 			<!-- Empieza form -->
 
 			<div class="w-3/4 px-4 bg-black-500 ml-10 border-l-2 border-white">
-				<form class="flex flex-col md:flex-row md:items-center justify-space-around md:ml-0" method="post" action="<?= $this->baseUrl() ?>">
-
-
+				<form class="flex flex-col md:flex-row md:items-center justify-space-around md:ml-0" method="post" 
+				action="createTask"
+>
 
 					<div class="mb-2 md:mr-2" style="width:30%">
 						<input type="text" name="taskDescription" min="0" max="10" step="any" required placeholder="Enter task" id="taskDescription" class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2" />
@@ -75,11 +75,11 @@
 						<input class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2 text-center" placeholder="End Date" name="enDate" required min="2023-09-21" max="2025-12-31" type="text" onfocus="(this.type='date')" onfocusout="(this.type='text')" id="enDate" />
 					</div>
 					<div class="mb-2 md:mr-2">
-						<select name="state" required id="state" class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2">
+						<select name="status" required id="state" class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2">
 							<option value="" disabled selected>Choose a state</option>
-							<option value="value1">Pending</option>
-							<option value="value2" selected>Ongoing</option>
-							<option value="value3">Completed</option>
+							<option value="Pending">Pending</option>
+							<option value="Ongoing" selected>Ongoing</option>
+							<option value="Completed">Completed</option>
 						</select>
 					</div>
 
