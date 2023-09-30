@@ -2,35 +2,35 @@
     {
         "task_description": "Tarea1",
         "author": "Rosa",
-        "starting_date": "2023-09-22 18:34:29",
+        "starting_date": "2023-09-22",
         "end_date": "2023-10-21",
         "status": "pendiente"
     },
     {
         "task_description": "Tarea2",
         "author": "Albert",
-        "starting_date": "2023-09-22 18:34:29",
+        "starting_date": "2023-09-22",
         "end_date": "2023-11-21",
         "status": "pendiente"
     },
     {
         "task_description": "Tarea3",
         "author": "Jana",
-        "starting_date": "2023-09-22 18:34:29",
+        "starting_date": "2023-09-22",
         "end_date": "2023-11-21",
         "status": "pendiente"
     },
     {
         "task_description": "Tarea4",
         "author": "Maribel",
-        "starting_date": "2023-09-22 18:34:29",
+        "starting_date": "2023-09-22",
         "end_date": "2023-09-21",
         "status": "finalizado"
     },
     {
         "task_description": "Tarea5",
         "author": "Fil",
-        "starting_date": "2023-09-22 18:34:29",
+        "starting_date": "2023-09-22",
         "end_date": "2023-09-30",
         "status": "en ejecucion"
     },
