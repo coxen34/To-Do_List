@@ -82,5 +82,19 @@
         "starting_date": "2023-09-30",
         "end_date": "2023-09-30",
         "status": "Completed"
+    },
+    {
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Completed"
+    },
+    {
+        "task_description": "Cuantas veces lo inserta??",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-10-01",
+        "status": "Pending"
     }
 ]
