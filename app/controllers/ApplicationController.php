@@ -44,7 +44,7 @@ class ApplicationController extends Controller
 
             //COMPRUEBO SI ALMACENA LOS DATOS
             // var_dump($_POST);
-            
+
             // Crea un nuevo array con los datos del formulario
             $newTask = [
                 "task_description" => $taskDescription,
@@ -58,7 +58,7 @@ class ApplicationController extends Controller
            
         }
         if ($newTask !== null) {
-            // Llamar a un método para agregar la tarea a tu modelo, por ejemplo:
+            // Llamar a un método para agregar la tarea al modelo, por ejemplo:
             $createTaskModel = new TaskModel();
             $createTaskModel->addTask($newTask);$this->view->createTaskModel = $createTaskModel;
         }
