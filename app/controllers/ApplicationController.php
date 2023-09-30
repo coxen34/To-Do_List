@@ -29,7 +29,7 @@ class ApplicationController extends Controller
         $this->view->dataJ = $dataJ;
 
     }
-    //!PRUEBAS
+    
     public function createTaskAction()
     {
         // Si se recibe una solicitud HTTP POST, recopila datos del formulario
