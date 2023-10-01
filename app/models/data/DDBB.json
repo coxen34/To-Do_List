@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "task_description": "Tarea1",
         "author": "Rosa",
         "starting_date": "2023-09-22",
@@ -7,6 +8,7 @@
         "status": "pendiente"
     },
     {
+        "id":2,
         "task_description": "Tarea2",
         "author": "Albert",
         "starting_date": "2023-09-22",
@@ -14,6 +16,7 @@
         "status": "pendiente"
     },
     {
+        "id":3,
         "task_description": "Tarea3",
         "author": "Jana",
         "starting_date": "2023-09-22",
@@ -21,6 +24,7 @@
         "status": "pendiente"
     },
     {
+        "id":4,
         "task_description": "Tarea4",
         "author": "Maribel",
         "starting_date": "2023-09-22",
@@ -28,6 +32,7 @@
         "status": "finalizado"
     },
     {
+        "id":5,
         "task_description": "Tarea5",
         "author": "Fil",
         "starting_date": "2023-09-22",
@@ -35,6 +40,7 @@
         "status": "en ejecucion"
     },
     {
+        "id":6,
         "task_description": "Probando inputs",
         "author": "Rose",
         "starting_date": "2023-10-01",
@@ -42,6 +48,7 @@
         "status": "value1"
     },
     {
+        "id":7,
         "task_description": "Arreglando select",
         "author": "Rose",
         "starting_date": "2023-09-30",
@@ -49,6 +56,7 @@
         "status": "Ongoing"
     },
     {
+        "id":8,
         "task_description": "Arreglando select",
         "author": "Rose",
         "starting_date": "2023-09-30",
@@ -56,6 +64,7 @@
         "status": "Ongoing"
     },
     {
+        "id":9,
         "task_description": "Arreglando select",
         "author": "Rose",
         "starting_date": "2023-09-30",
@@ -63,6 +72,7 @@
         "status": "Ongoing"
     },
     {
+        "id":10,
         "task_description": "Arreglando select",
         "author": "Rose",
         "starting_date": "2023-09-30",
@@ -70,6 +80,7 @@
         "status": "Ongoing"
     },
     {
+        "id":11,
         "task_description": "Arreglando select",
         "author": "Rose",
         "starting_date": "2023-09-30",
@@ -77,6 +88,7 @@
         "status": "Completed"
     },
     {
+        "id":12,
         "task_description": "Arreglando select",
         "author": "Rose",
         "starting_date": "2023-09-30",
@@ -84,6 +96,7 @@
         "status": "Completed"
     },
     {
+        "id":13,
         "task_description": "Arreglando select",
         "author": "Rose",
         "starting_date": "2023-09-30",
@@ -91,6 +104,7 @@
         "status": "Completed"
     },
     {
+        "id":14,
         "task_description": "Cuantas veces lo inserta??",
         "author": "Rose",
         "starting_date": "2023-09-30",
@@ -98,6 +112,7 @@
         "status": "Pending"
     },
     {
+        "id":15,
         "task_description": "Sigue funcionando?",
         "author": "Rose",
         "starting_date": "2023-10-01",
@@ -105,6 +120,7 @@
         "status": "Ongoing"
     },
     {
+        "id":16,
         "task_description": "Vuelvo a probar",
         "author": "Rose",
         "starting_date": "2023-10-01",
@@ -112,6 +128,7 @@
         "status": "Ongoing"
     },
     {
+        "id":17,
         "task_description": "Que son estos warnings?",
         "author": "Rose",
         "starting_date": "2023-10-01",
@@ -119,6 +136,7 @@
         "status": "Ongoing"
     },
     {
+        "id":18,
         "task_description": "Han desaparecido los wwarnings",
         "author": "Rose",
         "starting_date": "2023-10-01",
@@ -126,6 +144,7 @@
         "status": "Completed"
     },
     {
+        "id":19,
         "task_description": "Pruebo de nuevo",
         "author": "Rose",
         "starting_date": "2023-10-01",
