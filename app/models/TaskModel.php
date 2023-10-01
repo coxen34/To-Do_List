@@ -59,5 +59,8 @@ class TaskModel
         // Escribe el nuevo JSON en el archivo
         file_put_contents($this->jsonPath, $newJsonData);
     }
+    public function ediTask(){
+        
+    }
     
 }

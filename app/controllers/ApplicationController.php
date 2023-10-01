@@ -63,6 +63,9 @@ class ApplicationController extends Controller
             $createTaskModel->addTask($newTask);$this->view->createTaskModel = $createTaskModel;
         }
     }
+    public function ediTaskAction(){
+        
+    }
     
 
 }

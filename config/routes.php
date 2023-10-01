@@ -14,10 +14,11 @@
 // );
 
 $routes = array(
-	'/'		=> 'application#index',
-	'/form' =>	'application#form',
-	'/getAllTasks' =>	'application#getAllTasks',
-	'/createTask'=>'application#createTask'
+	'/'				=>  'application#index',
+	'/form' 		=>	'application#form',
+	'/getAllTasks'  =>	'application#getAllTasks',
+	'/createTask'	=>	'application#createTask',
+	'/ediTask'		=>	'application#ediTask'
 	
 
 
