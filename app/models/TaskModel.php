@@ -41,36 +41,31 @@ class TaskModel
     }
 
     
-    // OBTENER ID 
+    // _________OBTENER ID_______________
     public function getTaskById($taskId)
 {
     // Lee el contenido actual del archivo JSON
     $jsonData = file_get_contents($this->jsonPath);
 
-    // Decodifica el contenido JSON en un arreglo
     $tasks = json_decode($jsonData, true);
 
-    // Encuentra la tarea que corresponde al ID proporcionado
     foreach ($tasks as $task) {
         if ($task['id'] == $taskId) {
             return $task; // Devuelve la tarea encontrada
         }
     }
 
-    // Si no se encuentra la tarea, devuelve null o un mensaje de error según tu preferencia
+    // Si no se encuentra ... (x arreglar para 2 returns NO)
     return null;
 }
 
-    // METODO ACTUALIZAR TAREA
+    // __________METODO ACTUALIZAR TAREA____________
     public function updateTask($taskId, $updatedTask)
     {
-        // Lee el contenido actual del archivo JSON
         $jsonData = file_get_contents($this->jsonPath);
 
-        // Decodifica el contenido JSON en un arreglo
         $tasks = json_decode($jsonData, true);
 
-        // Encuentra la tarea que se va a actualizar por su ID
         foreach ($tasks as &$task) {
             if ($task['id'] == $taskId) {
                 // Actualiza los detalles de la tarea con los nuevos datos
@@ -79,7 +74,6 @@ class TaskModel
             }
         }
 
-        // Convierte el arreglo actualizado a formato JSON
         $newJsonData = json_encode($tasks, JSON_PRETTY_PRINT);
 
         // Escribe el nuevo JSON en el archivo
