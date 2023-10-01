@@ -22,7 +22,7 @@ class TaskModel
         $tasks = json_decode($data, true);
         return $tasks;
     }
-    //!PRUEBAS
+    // METODO CREAR TAREA
     public function createTask($newTask)
     {
         $jsonPath = ROOT_PATH . '/app/models/data/DDBB.json';
@@ -38,10 +38,11 @@ class TaskModel
         file_put_contents($jsonPath, $newJsonData);
 
 
-        // Redirecciona o muestra un mensaje de éxito(NO FUNCIONA)
+        // Redirecciona o muestra un mensaje de éxito(NO SE COMO VA)
         // header("Location: CreateTask.phtml");
         //exit();
     }
+    //METODO AÑADIR TAREA A JSON
     public function addTask($newTask) {
         // Lee el contenido actual del archivo JSON
         $jsonData = file_get_contents($this->jsonPath);
