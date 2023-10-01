@@ -69,8 +69,11 @@ class ApplicationController extends Controller
 
     public function deleteTaskAction() {
 
+
+    // checks the HTTP request method to see if it's a POST request.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+        //Retrieve the value of the "taskId" parameter from the POST data.
         $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
 
         if ($taskId !== null) {
