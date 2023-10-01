@@ -1,2 +1,41 @@
-<!-- FORMA ABREVIADA PARA ECHO -->
-<?= '<h1>Soy ediTask</h1>' ?>
+<h1>Editar Tarea</h1>
+
+    <form method="post" action="updateTask">
+        <!-- Input invisible para almacenar el id -->
+        <input type="hidden" name="taskId" value="<?= $this->taskToEdit['id'] ?>">
+
+        <div>
+            <label for="taskDescription">Descripción de la Tarea:</label>
+            <input type="text" name="taskDescription" id="taskDescription" value="<?= $this->taskToEdit['task_description'] ?>">
+        </div>
+
+        <div>
+            <label for="author">Autor:</label>
+            <input type="text" name="author" id="author" value="<?= $this->taskToEdit['author'] ?>">
+        </div>
+
+        <div>
+            <label for="startingDate">Fecha de Inicio:</label>
+            <input type="date" name="startingDate" id="startingDate" value="<?= $this->taskToEdit['starting_date'] ?>">
+        </div>
+
+        <div>
+            <label for="endDate">Fecha de Finalización:</label>
+            <input type="date" name="endDate" id="endDate" value="<?= $this->taskToEdit['end_date'] ?>">
+        </div>
+
+        <div>
+            <label for="status">Estado:</label>
+            <select name="status" id="status">
+                <option value="Pending" <?= ($this->taskToEdit['status'] === 'Pending') ? 'selected' : '' ?>>Pending</option>
+                <option value="Ongoing" <?= ($this->taskToEdit['status'] === 'Ongoing') ? 'selected' : '' ?>>Ongoing</option>
+                <option value="Completed" <?= ($this->taskToEdit['status'] === 'Completed') ? 'selected' : '' ?>>Completed</option>
+            </select>
+        </div>
+
+        <!-- Botón para guardar los cambios -->
+        <div>
+            <button type="submit">Guardar Cambios</button>
+        </div>
+    </form>
+

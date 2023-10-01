@@ -1,8 +1,7 @@
 <?php
 
-//$url = $this->baseUrl();
 $dataJ = $this->dataJ;
-//? comprobamos si la variable está definida
+// Comprobamos si la variable está definida para poder mostrar los datos
 if (isset($dataJ)) : ?>
 
     <!-- Mostramos los datos en una tabla  -->
@@ -19,16 +18,25 @@ if (isset($dataJ)) : ?>
         <tbody>
             <?php foreach ($dataJ as $task) : ?>
                 <tr>
+
                     <td><?php echo $task['task_description']; ?></td>
                     <td><?php echo $task['author']; ?></td>
                     <td><?php echo $task['starting_date']; ?></td>
                     <td><?php echo $task['end_date']; ?></td>
                     <td><?php echo $task['status']; ?></td>
 
+                    <!-- Completar descripción de la función form-->
+                    <!-- Pero vamos que me lleva a: ediTask.phtml cogiendo el id de la tarea -->
                     <td>
-                        <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">
-                            <i class="fa-solid fa-pencil"></i>
-                        </button>
+                        <form method="post" action="ediTask">
+                            <input type="hidden" name="taskId" value="<?php echo $task['id']; ?>">
+                            <!-- el echo de ↑↑ no sé exactamente pq pero si lo quito no almacena el id... -->
+                            <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="buttonEditTask">
+                                <i class="fa-solid fa-pencil"></i> Editar
+                            </button>
+                        </form>
+                    </td></i>
+                    </button>
                     </td>
                     <td>
                         <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">

@@ -18,8 +18,6 @@ $routes = array(
 	'/form' 		=>	'application#form',
 	'/getAllTasks'  =>	'application#getAllTasks',
 	'/createTask'	=>	'application#createTask',
-	'/ediTask'		=>	'application#ediTask'
-	
-
-
+	'/ediTask'		=>	'application#ediTask',
+	'/updateTask'	=>	'application#updateTask'
 );
