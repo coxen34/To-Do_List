@@ -81,6 +81,9 @@ class ApplicationController extends Controller
             $taskModel = new TaskModel();
             $taskModel->deleteTask($taskId);
 
+            // Set a task success message in the session
+            $_SESSION['success_message'] = 'Task deleted successfully';
+
             // Redirect to the task list or any other appropriate page after deletion
             header("Location: getAllTasks");
 
