@@ -66,6 +66,30 @@ class ApplicationController extends Controller
     public function ediTaskAction(){
         
     }
-    
 
+    public function deleteTaskAction() {
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
+
+        if ($taskId !== null) {
+
+            $taskModel = new TaskModel();
+            $taskModel->deleteTask($taskId);
+
+            // Redirect to the task list or any other appropriate page after deletion
+            header("Location: getAllTasks");
+
+            exit();
+
+        } else {
+
+            echo "Task ID doesn't exist.";
+        }
+
+    }
+
+}
+    
 }
