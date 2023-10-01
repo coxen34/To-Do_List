@@ -1,14 +1,14 @@
 <?php
 
 /**
- * A controller used for handling standard errors
+ * Un controlador utilizado para manejar errores estándar.
  */
 class ErrorController extends Controller
 {
 	protected $_exception = null;
 	
 	/**
-	 * Sets the exception to show information about
+	 * Establece la excepción para mostrar información sobre
 	 */
 	public function setException(Exception $exception)
 	{
@@ -16,17 +16,17 @@ class ErrorController extends Controller
 	}
 	
 	/**
-	 * The error action, which is called whenever there is an error on the site
+	 * La acción de error, que se llama cada vez que hay un error en el sitio.
 	 */
 	public function errorAction()
 	{
-		// sets the 404 header
+		// establece el encabezado 404
 		header("HTTP/1.0 404 Not Found");
 		
-		// sets the error to be rendered in the view
+		// establece el error que se representará en la vista
 		$this->view->error = $this->_exception->getMessage();
 		
-		// logs the error to the log
+		// registra el error en el registro
 		error_log($this->view->error);
 		error_log($this->_exception->getTraceAsString());
 	}

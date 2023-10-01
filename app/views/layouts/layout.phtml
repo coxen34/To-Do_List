@@ -1,11 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/35a2d9730b.js" crossorigin="anonymous"></script>
+	<title>To-Do_List</title>
 </head>
-<body>
-	<?php echo $this->content(); ?>
+
+<body class="bg-slate-600">
+
+	</div>
+	</header>
+	<header class="bg-yellow-500 py-4">
+		<div class="container mx-auto text-center">
+			<h1 class="text-4xl font-semibold text-white">To-Do List</h1>
+		</div>
+	</header>
+
+	<!-- <main class="flex-grow"> -->
+	<main class="flex flex-col mt-2">
+		<main class="flex mt-2">
+			<!-- Aside  -->
+
+			<aside class="w-1/4 px-6 bg-black-500 ">
+				<div class="ml-5">
+					<h2 class="text-white text-5xl font-bold mb-2 ">Views</h2>
+					<hr class="my-8 border-t-2 border-white-400" style="width: 100%;">
+					<p class="text-white text-black-600 text-lg font-semibold">
+						Choose a filter to see results
+					</p>
+				</div>
+
+				<div class="mt-6 ml-5 ">
+					<h3 class="text-white text-3xl font-bold mb-2 ">Frequency</h3>
+					<hr class="my-4 border-t-2 border-white-400" style="width: 100%;">
+					<ul class="list-none ml-4 text-white">
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Weekly</li>
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Monthly</li>
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Yearly</li>
+					</ul>
+				</div>
+				<div class="mt-6 ml-5">
+					<h3 class="text-white text-3xl font-bold mb-2">State</h3>
+					<hr class="my-4 border-t-2 border-white-400" style="width: 100%;">
+					<ul class="list-none ml-4 text-white">
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Pending</li>
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Ongoing</li>
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Completed</li>
+					</ul>
+				</div>
+			</aside>
+			<!-- End Aside -->
+			<!-- Empieza form -->
+
+			<div class="w-3/4 px-4 bg-black-500 ml-10 border-l-2 border-white">
+				<form class="flex flex-col md:flex-row md:items-center justify-space-around md:ml-0" method="post" 
+				action="createTask"
+>
+
+					<div class="mb-2 md:mr-2" style="width:30%">
+						<input type="text" name="taskDescription" min="0" max="10" step="any" required placeholder="Enter task" id="taskDescription" class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2" />
+					</div>
+					<div class="mb-2 md:mr-2">
+						<input type="text" name="author" min="0" max="10" step="any" required placeholder="Created by" id="author" class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2" />
+					</div>
+					<div class="mb-2 md:mr-2">
+						<input class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2 text-center" placeholder="Starting Date" name="startingDate" required min="2023-09-21" max="2025-12-31" type="text" onfocus="(this.type='date')" onfocusout="(this.type='text')" id="startingDate" />
+					</div>
+
+					<div class="mb-2 md:mr-2">
+						<input class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2 text-center" placeholder="End Date" name="enDate" required min="2023-09-21" max="2025-12-31" type="text" onfocus="(this.type='date')" onfocusout="(this.type='text')" id="enDate" />
+					</div>
+					<div class="mb-2 md:mr-2">
+						<select name="status" required id="state" class="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-200 rounded mb-2">
+							<option value="" disabled selected>Choose a state</option>
+							<option value="Pending">Pending</option>
+							<option value="Ongoing" selected>Ongoing</option>
+							<option value="Completed">Completed</option>
+						</select>
+					</div>
+
+					<div class="mb-2 md:mr-2">
+						<button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="buttonForm">
+							<i class="fa-solid fa-plus fa-2x"></i>
+						</button>
+					</div>
+				</form>
+				<!-- Other content in the main section -->
+				<div><?= $this->content() ?></div>
+			</div>
+		</main>
+		<footer></footer>
 </body>
+
 </html>

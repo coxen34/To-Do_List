@@ -1,0 +1,46 @@
+<?php
+
+//$url = $this->baseUrl();
+$dataJ = $this->dataJ;
+//? comprobamos si la variable está definida
+if (isset($dataJ)) : ?>
+
+    <!-- Mostramos los datos en una tabla  -->
+    <table style='border:1'>
+        <thead>
+            <tr>
+                <th>Descripción de la Tarea</th>
+                <th>Autor</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Finalización</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($dataJ as $task) : ?>
+                <tr>
+                    <td><?php echo $task['task_description']; ?></td>
+                    <td><?php echo $task['author']; ?></td>
+                    <td><?php echo $task['starting_date']; ?></td>
+                    <td><?php echo $task['end_date']; ?></td>
+                    <td><?php echo $task['status']; ?></td>
+
+                    <td>
+                        <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php else : ?>
+    <!-- Cuando $dataJ no está disponible -->
+    <p>Archivo no disponible.</p>
+<?php endif; ?>

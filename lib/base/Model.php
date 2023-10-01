@@ -1,7 +1,7 @@
 <?php
 
 /**
- * A base model for handling the database connections
+ * Un modelo base para manejar las conexiones de la base de datos.
  */
 class Model
 {
@@ -10,10 +10,10 @@ class Model
 	
 	public function __construct()
 	{
-		// parses the settings file
+		// analiza el archivo de configuración
 		$settings = parse_ini_file(ROOT_PATH . '/config/settings.ini', true);
 		
-		// starts the connection to the database
+		// inicia la conexión a la base de datos
 		$this->_dbh = new PDO(
 			sprintf(
 				"%s:host=%s;dbname=%s",
@@ -35,8 +35,8 @@ class Model
 	}
 	
 	/**
-	 * Sets the database table the model is using
-	 * @param string $table the table the model is using
+	 * Establece la tabla de base de datos que utiliza el modelo
+	 * @param string $table la tabla que está usando el modelo
 	 */
 	protected function _setTable($table)
 	{
@@ -55,10 +55,10 @@ class Model
 	}
 	
 	/**
-	 * Saves the current data to the database. If an key named "id" is given,
-	 * an update will be issued.
-	 * @param array $data the data to save
-	 * @return int the id the data was saved under
+	 * Guarda los datos actuales en la base de datos. Si se proporciona una clave llamada "id",
+	 * se emitirá una actualización.
+	 * @param array $data los datos a guardar
+	 * @return int la identificación bajo la cual se guardaron los datos
 	 */
 	public function save($data = array())
 	{
@@ -80,7 +80,7 @@ class Model
 				}
 			}
 			
-			// adds the id as well
+			// agrega la identificación también
 			$values[] = $data['id'];
 			
 			$sql .= ' where id = ?';// . $data['id'];
@@ -118,9 +118,9 @@ class Model
 	}
 	
 	/**
-	 * Deletes a single entry
-	 * @param int $id the id of the entry to delete
-	 * @return boolean true if all went well, else false.
+	 * Elimina una sola entrada
+	 * @param int $id la identificación de la entrada a eliminar
+	 * @return boolean verdad si todo salió bien, de lo contrario false.
 	 */
 	public function delete($id)
 	{

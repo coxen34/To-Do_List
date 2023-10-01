@@ -1,41 +1,41 @@
 <?php
 
 /**
- * Used for setting up the routing in the system
+ * Se utiliza para configurar la ruta en el sistema.
  */
 class Router
 {
 	/**
-	 * Executes the system routing
+	 * Ejecuta el enrutamiento del sistema.
 	 * @throws Exception
 	 */
 	public function execute($routes)
 	{
-		// tries to find the route and run the given action on the controller
+		// intenta encontrar la ruta y ejecutar la acción dada en el controlador
 		try {
-			// the controller and action to execute
+			// El controlador y la acción a ejecutar.
 			$controller = null;
 			$action = null;
 			
-			// tries to find a simple route
+			// intenta encontrar una ruta sencilla
 			$routeFound = $this->_getSimpleRoute($routes, $controller, $action);
 			
 			if (!$routeFound) {
-				// tries to find the a matching "parameter route"
+				// intenta encontrar una "ruta de parámetro" coincidente
 				$routeFound = $this->_getParameterRoute($routes, $controller, $action);
 			}
 			
-			// no route found, throw an exception to run the error controller
+			// no se encontró ninguna ruta, lanza una excepción para ejecutar el controlador de errores
 			if (!$routeFound || $controller == null || $action == null) {
 				throw new Exception('no route added for ' . $_SERVER['REQUEST_URI']);
 			}
 			else {
-				// executes the action on the controller
+				// ejecuta la acción en el controlador
 				$controller->execute($action);
 			}
 		}
 		catch(Exception $exception) {
-			// runs the error controller
+			// ejecuta el controlador de errores
 			$controller = new ErrorController();
 			$controller->setException($exception);
 			$controller->execute('error');
@@ -43,7 +43,7 @@ class Router
 	}
 	
 	/**
-	 * Tests if a route has parameters
+	 * Prueba si una ruta tiene parámetros
 	 * @param string $route the route (uri) to test
 	 * @return boolean
 	 */
@@ -53,7 +53,7 @@ class Router
 	}
 	
 	/**
-	 * Fetches the current URI called
+	 * Obtiene el URI actual llamado
 	 * @return string the URI called
 	 */
 	protected function _getUri()
@@ -66,18 +66,18 @@ class Router
 	}
 	
 	/**
-	 * Tries to find a matching simple route
-	 * @param array $routes the list of routes in the system
-	 * @param Controller $controller the controller to use (sent as reference)
-	 * @param string $action the action to execute (sent as reference)
+	 * Intenta encontrar una ruta simple que coincida
+	 * @param array $routes la lista de rutas en el sistema
+	 * @param Controller $controller el controlador a usar (enviado como referencia)
+	 * @param string $action la acción a ejecutar (enviada como referencia)
 	 * @return boolean
 	 */
 	protected function _getSimpleRoute($routes, &$controller, &$action)
 	{
-		// fetches the URI
+		// recupera el URI
 		$uri = $this->_getUri();
 		
-		// if the route isn't defined, try to add a trailing slash
+		// si la ruta no está definida, intente agregar una barra diagonal
 		if (isset($routes[$uri])) {
 			$routeFound = $routes[$uri];
 		}
@@ -86,11 +86,11 @@ class Router
 		}
 		else {
 			$uri = substr($uri, 0, -1);
-			// fetches the current route
+			// busca la ruta actual
 			$routeFound = isset($routes[$uri]) ? $routes[$uri] : false;
 		}
 		
-		// if a matching route was found
+		// si se encontró una ruta coincidente
 		if ($routeFound) {
 			list($name, $action) = explode('#', $routeFound);
 		
@@ -104,10 +104,10 @@ class Router
 	}
 	
 	/**
-	 * Tries to find a matching parameter route
-	 * @param array $routes the list of routes in the system
-	 * @param Controller $controller the controller to use (sent as reference)
-	 * @param string $action the action to execute (sent as reference)
+	 * Intenta encontrar una ruta de parámetro coincidente
+	 * @param array $routes la lista de rutas en el sistema
+	 * @param Controller $controller el controlador a usar (enviado como referencia)
+	 * @param string $action la acción a ejecutar (enviada como referencia)
 	 * @return boolean
 	 */
 	protected function _getParameterRoute($routes, &$controller, &$action)
@@ -133,7 +133,7 @@ class Router
 					$pattern .= '\/([a-zA-Z0-9]+)';
 				}
 				
-				// now also handles ending slashes!
+				// ¡Ahora también maneja las barras diagonales finales!
 				$pattern .= '[\/]{0,1}$/';
 					
 				$namedParameters = array();
@@ -145,7 +145,7 @@ class Router
 					// initializes the controller
 					$controller = $this->_initializeController($name);
 		
-					// adds the named parameters to the controller
+					// agrega los parámetros nombrados al controlador
 					foreach (range(1, count($namedParameters)-1) as $index) {
 						$controller->addNamedParameter(
 								$uriParts[$index],
@@ -168,7 +168,7 @@ class Router
 	 */
 	protected function _initializeController($name)
 	{
-		// initializes the controller
+		// Inicializa el controlador dado
 		$controller = ucfirst($name) . 'Controller';
 		// constructs the controller
 		return new $controller();

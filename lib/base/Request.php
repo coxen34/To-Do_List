@@ -3,7 +3,7 @@
 class Request
 {
 	/**
-	 * Tests if the current request is a POST request
+	 * Prueba si la solicitud actual es una solicitud POST
 	 * @return boolean
 	 */
 	public function isPost()
@@ -12,7 +12,7 @@ class Request
 	}
 	
 	/**
-	 * Tests if the current request is a GET request
+	 * Prueba si la solicitud actual es una solicitud GET
 	 * @return boolean
 	 */
 	protected function _isGet()
@@ -21,9 +21,9 @@ class Request
 	}
 	
 	/**
-	 * fetches the given parameter data.
-	 * @param string $key the key to look for.
-	 * @param mixed $default the default value to return, if the given parameter is not set.
+	 * recupera los datos del parámetro dado.
+	 * @param string $key la clave a buscar.
+	 * @param mixed $default el valor predeterminado a devolver, si el parámetro dado no está configurado.
 	 */
 	public function getParam($key, $default = null)
 	{
@@ -42,7 +42,7 @@ class Request
 	}
 	
 	/**
-	 * Returns a list of parameters given in the current request
+	 * Devuelve una lista de parámetros proporcionados en la solicitud actual.
 	 * @return array the params given
 	 */
 	public function getAllParams()

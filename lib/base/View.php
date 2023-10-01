@@ -1,12 +1,12 @@
 <?php
 
 /**
- * A class for handling the view logic of the system
+ * Una clase para manejar la lógica de vista del sistema.
  *
  */
 class View
 {
-	// used for holding the content of the view script
+	// utilizado para contener el contenido del script de vista
 	protected $_content = "";
 	// the standard layout
 	protected $_layout = 'layout';
@@ -16,7 +16,7 @@ class View
 	
 	// initializes the data array
 	protected $_data = array();
-	// intializes the additional javascripts to add to the header.
+	// inicializa los javascripts adicionales para agregar al encabezado.
 	protected $_javascripts = '';
 	
 	public $settings = null;
@@ -27,22 +27,22 @@ class View
 	}
 
 	/**
-	 * Renders the view script, and stores the output
+	 * Representa el script de vista y almacena el resultado.
 	 */
 	protected function _renderViewScript($viewScript)
 	{
-		// starts the output buffer
+		// inicia el buffer de salida
 		ob_start();
 		
-		// includes the view script
+		// incluye el script de visualización
 		include(ROOT_PATH . '/app/views/scripts/' . $viewScript);
 		
-		// returns the content of the output buffer
+		// devuelve el contenido del buffer de salida
 		$this->_content = ob_get_clean();
 	}
 	
 	/**
-	 * Fetches the content of the current view script
+	 * Obtiene el contenido del script de vista actual
 	 */
 	public function content()
 	{
@@ -50,12 +50,12 @@ class View
 	}
 	
 	/**
-	 * Renders the current view.
+	 * Representa la vista actual.
 	 */
 	public function render($viewScript)
 	{
 	  if ($viewScript && $this->_viewEnabled) {
-  		// renders the view script
+  		// renderiza el script de vista
   		$this->_renderViewScript($viewScript);
 	  }
 		
@@ -63,14 +63,14 @@ class View
 	    echo $this->_content;
 	  }
 	  else {
-  		// includes the current view, which uses the "$this->content()" to output the 
-  		// view script that was just rendered
+  		// incluye la vista actual, que utiliza "$this->content()" para generar el
+  		// ver el script que acaba de ser renderizado
   		include(ROOT_PATH . '/app/views/layouts/' . $this->_getLayout() . '.phtml');
 	  }
 	}
 	
 	/**
-	 * Renders the given data as json
+	 * Representa los datos dados como json
 	 * @param mixed $data
 	 */
 	public function renderJson($data)
@@ -78,7 +78,7 @@ class View
 	  $this->disableView();
 	  $this->disableLayout();
 	  
-	  // sets the json headers
+	  // establece los encabezados json
 	  header('Cache-Control: no-cache, must-revalidate');
 	  header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 	  header('Content-type: application/json');
@@ -111,20 +111,20 @@ class View
 	}
 	
 	/**
-	 * stores the given data on the given key
-	 * @param string $key the key to store the data under
-	 * @param mixed $value the value to store
+	 * almacena los datos dados en la clave dada
+	 * @param string $key la clave para almacenar los datos en
+	 * @param mixed $value el valor a almacenar
 	 */
 	public function __set($key, $value)
 	{
-		// stores the data
+		// almacena los datos
 		$this->_data[$key] = $value;
 	}
 	
 	/**
-	 * Returns the data if it exists, else nul
-	 * @param string $key the data to look for
-	 * @return mixed the data found or null
+	 * Devuelve los datos si existen, de lo contrario nulo
+	 * @param string $key los datos a buscar
+	 * @return mixed los datos encontrados o nulos
 	 */
 	public function __get($key)
 	{
@@ -136,9 +136,9 @@ class View
 	}
 	
 	/**
-	 * The base url is used if the application is located in a subfolder. Use
-	 * this function when linking to things.
-	 * @return string the baseUrl for the application.
+	 * La URL base se utiliza si la aplicación está ubicada en una subcarpeta. Usar
+	 * esta función al vincular cosas.
+	 * @return string la URL base de la aplicación.
 	 */
 	public function baseUrl()
 	{
@@ -146,8 +146,8 @@ class View
 	}
 	
 	/**
-	 * Adds a new javascript to the header.
-	 * @param string $script the path to the script to add
+	 * Agrega un nuevo javascript al encabezado.
+	 * @param string $script la ruta al script a agregar
 	 */
 	public function appendScript($script)
 	{
@@ -155,7 +155,7 @@ class View
 	}
 	
 	/**
-	 * Prints the included javascripts
+	 * Imprime los javascripts incluidos.
 	 */
 	public function printScripts()
 	{
@@ -163,7 +163,7 @@ class View
 	}
 	
 	/**
-	 * Sets the layout to be used
+	 * Establece el diseño que se utilizará
 	 */
 	protected function _enableLayout()
 	{
@@ -171,7 +171,7 @@ class View
 	}
 	
 	/**
-	 * Tests if the layout is disabled
+	 * Prueba si el diseño está deshabilitado
 	 */
 	protected function _isLayoutDisabled()
 	{
