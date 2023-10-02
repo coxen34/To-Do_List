@@ -52,9 +52,12 @@ if (isset($_SESSION['success_message'])) {
                     </button>
                     </td>
                     <td>
+                        <form method="post" action="deleteTask">
+                            <input type="hidden" name="taskId" value="<?php echo $task['id']; ?>">
                         <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">
                             <i class="fa-solid fa-trash"></i>
                         </button>
+                        </form>
                     </td>
 
                 </tr>
@@ -65,3 +68,4 @@ if (isset($_SESSION['success_message'])) {
     <!-- Cuando $dataJ no está disponible -->
     <p>Archivo no disponible.</p>
 <?php endif; ?>
+
