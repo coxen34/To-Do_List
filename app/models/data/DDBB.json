@@ -142,7 +142,6 @@
         "starting_date": "2023-10-01",
         "end_date": "2023-10-01",
         "status": "Completed"
-<<<<<<< HEAD
     },
     {
         "id": 19,
@@ -183,7 +182,5 @@
         "end_date": "2023-10-12",
         "status": "Pending",
         "id": null
-=======
->>>>>>> deleteTaskN
     }
 ]
