@@ -20,4 +20,8 @@ $routes = array(
 	'/createTask'	=>	'application#createTask',
 	'/ediTask'		=>	'application#ediTask',
 	'/updateTask'	=>	'application#updateTask'
+	'/deleteTask' =>	'application#deleteTask',
+	
+
+
 );

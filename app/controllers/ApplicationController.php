@@ -125,4 +125,36 @@ class ApplicationController extends Controller
             $taskModel->updateTask($taskId, $updatedTask);
         }
     }
+
+    public function deleteTaskAction() {
+
+
+    // checks the HTTP request method to see if it's a POST request.
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        //Retrieve the value of the "taskId" parameter from the POST data.
+        $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
+
+        if ($taskId !== null) {
+
+            $taskModel = new TaskModel();
+            $taskModel->deleteTask($taskId);
+
+            // Set a task success message in the session
+            $_SESSION['success_message'] = 'Task deleted successfully';
+
+            // Redirect to the task list or any other appropriate page after deletion
+            header("Location: getAllTasks");
+
+            exit();
+
+        } else {
+
+            echo "Task ID doesn't exist.";
+        }
+
+    }
+
+}
+    
 }
