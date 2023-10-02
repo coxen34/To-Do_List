@@ -29,6 +29,7 @@ class ApplicationController extends Controller
         $this->view->dataJ = $dataJ;
     }
 
+    // ___________CONTROLADOR CREAR TAREA_____________
     public function createTaskAction()
     {
         // Si se recibe una solicitud HTTP POST, recopila datos del formulario
@@ -71,7 +72,7 @@ class ApplicationController extends Controller
             header("Location: getAllTasks");
         }
     }
-
+    // ___________CONTROLADOR EDITAR TAREA_____________
     public function ediTaskAction()
     {
         // Asigno el valor del input "name:taskId"
@@ -88,8 +89,6 @@ class ApplicationController extends Controller
             if ($taskToEdit) {
                 // Visualizamos
                 $this->view->taskToEdit = $taskToEdit;
-
-                
             } else {
                 echo "La tarea no existe.";
             }
@@ -97,6 +96,7 @@ class ApplicationController extends Controller
             echo "ID de tarea no válido.";
         }
     }
+    // ___________CONTROLADOR UPDATE TAREA_____________
     public function updateTaskAction()
     {
         // Si se recibe una solicitud HTTP POST, recopila datos del formulario
@@ -126,35 +126,65 @@ class ApplicationController extends Controller
         }
     }
 
-    public function deleteTaskAction() {
+    public function deleteTaskAction()
+    {
 
 
-    // checks the HTTP request method to see if it's a POST request.
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // checks the HTTP request method to see if it's a POST request.
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        //Retrieve the value of the "taskId" parameter from the POST data.
-        $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
+            //Retrieve the value of the "taskId" parameter from the POST data.
+            $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
 
-        if ($taskId !== null) {
+            if ($taskId !== null) {
 
-            $taskModel = new TaskModel();
-            $taskModel->deleteTask($taskId);
+                $taskModel = new TaskModel();
+                $taskModel->deleteTask($taskId);
 
-            // Set a task success message in the session
-            $_SESSION['success_message'] = 'Task deleted successfully';
+                // Set a task success message in the session
+                $_SESSION['success_message'] = 'Task deleted successfully';
 
-            // Redirect to the task list or any other appropriate page after deletion
-            header("Location: getAllTasks");
+                // Redirect to the task list or any other appropriate page after deletion
+                header("Location: getAllTasks");
 
-            exit();
+                exit();
+            } else {
 
-        } else {
-
-            echo "Task ID doesn't exist.";
+                echo "Task ID doesn't exist.";
+            }
         }
+    }// ___________CONTROLADOR STATUS VIEWS_____________
+    public function pendingAction()
+    {
+        $dataJ = [];
 
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        //return $dataJ;
+
+        $this->view->dataJ = $dataJ;
     }
+    public function ongoingAction()
+    {
+        $dataJ = [];
 
-}
-    
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        //return $dataJ;
+
+        $this->view->dataJ = $dataJ;
+    }
+    public function completedAction()
+    {
+        $dataJ = [];
+
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        //return $dataJ;
+
+        $this->view->dataJ = $dataJ;
+    }
 }

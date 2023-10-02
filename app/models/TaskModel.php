@@ -101,8 +101,24 @@ class TaskModel {
     
         $newJsonData = json_encode($tasks, JSON_PRETTY_PRINT);
         file_put_contents($this->jsonPath, $newJsonData);
-    
+        // ___________________STATUS VIEWS_______________________
         }
+        public function pending(){
+            $data = file_get_contents($this->jsonPath);
+            $tasks = json_decode($data, true);
+        return $tasks;
+        }
+        public function ongoing(){
+            $data = file_get_contents($this->jsonPath);
+            $tasks = json_decode($data, true);
+        return $tasks;
+        }
+        public function completed(){
+            $data = file_get_contents($this->jsonPath);
+            $tasks = json_decode($data, true);
+        return $tasks;
+        }
+
 }
 
     
