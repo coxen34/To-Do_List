@@ -46,13 +46,13 @@ class ApplicationController extends Controller
 
             // Crea un nuevo array con los datos del formulario
             $newTask = [
-               
+
                 "task_description" => $taskDescription,
                 "author" => $author,
                 "starting_date" => $startingDate,
                 "end_date" => $enDate,
                 "status" => $status,
-                "id" =>NULL
+                "id" => NULL
                 // ↑↑ POR ARREGLAR
 
             ];
@@ -70,18 +70,17 @@ class ApplicationController extends Controller
             // Redirect to the task list or any other appropriate page after deletion
             header("Location: getAllTasks");
         }
-
     }
 
     public function ediTaskAction()
     {
         // Asigno el valor del input "name:taskId"
         // Usando el operador ternario "? $_POST["taskId"] : null;", le asigno valor en función de la verificación: "isset($_POST["taskId"])"
-        $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null; 
-        
-        
+        $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
+
+
         if ($taskId !== null) {
-            
+
             $taskModel = new TaskModel();
             $taskToEdit = $taskModel->getTaskById($taskId);
 
@@ -89,6 +88,7 @@ class ApplicationController extends Controller
             if ($taskToEdit) {
                 // Visualizamos
                 $this->view->taskToEdit = $taskToEdit;
+
                 
             } else {
                 echo "La tarea no existe.";
@@ -101,7 +101,7 @@ class ApplicationController extends Controller
     {
         // Si se recibe una solicitud HTTP POST, recopila datos del formulario
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            
+
             $taskId = $_POST["taskId"];
             $taskDescription = $_POST["taskDescription"];
             $author = $_POST["author"];
@@ -123,7 +123,6 @@ class ApplicationController extends Controller
             //Ya se puede actualizar la tarea
             $taskModel = new TaskModel();
             $taskModel->updateTask($taskId, $updatedTask);
-            
         }
     }
 }
