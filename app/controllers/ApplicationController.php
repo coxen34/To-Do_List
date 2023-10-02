@@ -24,9 +24,11 @@ class ApplicationController extends Controller
         $dataJson = new TaskModel();
         $dataJ = $dataJson->getAllTasks();
 
-        //return $dataJ;
+
 
         $this->view->dataJ = $dataJ;
+
+        return $dataJ;
     }
 
     // ___________CONTROLADOR CREAR TAREA_____________
@@ -42,8 +44,19 @@ class ApplicationController extends Controller
             $enDate = $_POST["enDate"];
             $status = $_POST["status"];
 
-            //COMPRUEBO SI ALMACENA LOS DATOS
-            // var_dump($_POST);
+            //PROCESO PARA OBTENER EL ULTIMO ID
+            $lastId = 0;
+            $dataJ = [];
+
+            $dataJson = new TaskModel();
+            $dataJ = $dataJson->getAllTasks();
+            foreach ($dataJ as $task) {
+                if ($task["id"] > $lastId) {
+                    $lastId = $task["id"];
+                }
+            }
+
+            $newId = $lastId + 1;
 
             // Crea un nuevo array con los datos del formulario
             $newTask = [
@@ -53,15 +66,15 @@ class ApplicationController extends Controller
                 "starting_date" => $startingDate,
                 "end_date" => $enDate,
                 "status" => $status,
-                "id" => NULL
-                // ↑↑ POR ARREGLAR
+                "id" => $newId
+
 
             ];
             // $this->view->newTask = $newTask;
 
         }
         if ($newTask !== null) {
-            // Llamar a un método para agregar la tarea al modelo, por ejemplo:
+            // Llama a un método para agregar la tarea al modelo
             $createTaskModel = new TaskModel();
             $createTaskModel->createTask($newTask);
             $this->view->createTaskModel = $createTaskModel;
@@ -153,7 +166,7 @@ class ApplicationController extends Controller
                 echo "Task ID doesn't exist.";
             }
         }
-    }// ___________CONTROLADOR STATUS VIEWS_____________
+    } // ___________CONTROLADOR STATUS VIEWS_____________
     public function pendingAction()
     {
         $dataJ = [];
