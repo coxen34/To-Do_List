@@ -64,7 +64,13 @@ class ApplicationController extends Controller
             $createTaskModel = new TaskModel();
             $createTaskModel->createTask($newTask);
             $this->view->createTaskModel = $createTaskModel;
+            // Set a task success message in the session
+            $_SESSION['success_message'] = 'Task created successfully';
+
+            // Redirect to the task list or any other appropriate page after deletion
+            header("Location: getAllTasks");
         }
+
     }
 
     public function ediTaskAction()

@@ -166,5 +166,13 @@
         "end_date": "2023-10-01",
         "status": "Ongoing",
         "id": null
+    },
+    {
+        "task_description": "Prueba mensaje",
+        "author": "Rose",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-04",
+        "status": "Ongoing",
+        "id": null
     }
 ]

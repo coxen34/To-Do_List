@@ -4,7 +4,20 @@ $dataJ = $this->dataJ;
 // Comprobamos si la variable está definida para poder mostrar los datos
 if (isset($dataJ)) : ?>
 
-    <!-- Mostramos los datos en una tabla  -->
+<?php
+
+// Check if a success message is present in the session
+if (isset($_SESSION['success_message'])) {
+
+    echo '<div class="success-message">' . $_SESSION['success_message'] . '</div>';
+
+    // Remove the success message from the session to prevent it from being displayed on subsequent page loads
+    unset($_SESSION['success_message']);
+
+}
+
+?>  
+<!-- Mostramos los datos en una tabla  -->
     <table style='border:1'>
         <thead>
             <tr>
