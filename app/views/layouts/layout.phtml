@@ -7,6 +7,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://kit.fontawesome.com/35a2d9730b.js" crossorigin="anonymous"></script>
+	<style>
+        /* Agrega estilos CSS personalizados */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Asegura que el encabezado esté por encima del contenido */
+        }
+		.stickyAside{
+			position: sticky;
+            top:20%;
+            z-index: 1001;
+		}
+		.stickyF{
+			position: sticky;
+            top: 45%;
+            z-index: 1002;
+		}
+		.stickyS{
+			position: sticky;
+            top: 80%;
+            z-index: 1003;
+		}
+    </style>
 
 
 	<title>To-Do_List</title>
@@ -15,7 +43,7 @@
 <body class="bg-slate-600">
 
 	</div>
-	<header class="bg-yellow-500 py-4">
+	<header class="bg-yellow-500 py-4 sticky-header">
 		<div class="container mx-auto text-center">
 			<a href="getAllTasks">
 				<i class="text-4xl font-semibold text-white"><i class="fa-solid fa-igloo"></i></i>
@@ -31,25 +59,25 @@
 		<main class="flex mt-2">
 			<!-- Aside  -->
 
-			<aside class="w-1/4 px-6 bg-black-500 ">
-				<div class="ml-5">
-					<h2 class="text-white text-5xl font-bold mb-2 ">Views</h2>
+			<aside class="w-1/4 px-6 bg-black-500 stickyAside">
+				<div class="ml-5 stickyAside">
+					<h2 class="text-white text-5xl font-bold mb-2 stickyAside">Views</h2>
 					<hr class="my-8 border-t-2 border-white-400" style="width: 100%;">
-					<p class="text-white text-black-600 text-lg font-semibold">
+					<p class="text-white text-black-600 text-lg font-semibold stickyAside">
 						Choose a filter to see results
 					</p>
 				</div>
 
-				<div class="mt-6 ml-5 ">
+				<div class="mt-6 ml-5 stickyF">
 					<h3 class="text-white text-3xl font-bold mb-2 ">Frequency</h3>
 					<hr class="my-4 border-t-2 border-white-400" style="width: 100%;">
 					<ul class="list-none ml-4 text-white">
-						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Weekly</li>
-						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Monthly</li>
-						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300">Yearly</li>
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300 ">Weekly</li>
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300 ">Monthly</li>
+						<li class="font-sans hover:font-serif text-lg font-semibold mt-6 hover:text-blue-300 ">Yearly</li>
 					</ul>
 				</div>
-				<div class="mt-6 ml-5">
+				<div class="mt-6 ml-5 stickyS">
 					<h3 class="text-white text-3xl font-bold mb-2">Status</h3>
 					<hr class="my-4 border-t-2 border-white-400" style="width: 100%;">
 					<ul class="list-none ml-4 text-white">
