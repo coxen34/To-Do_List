@@ -16,26 +16,28 @@ if (isset($dataJ)) : ?>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($dataJ as $task) : 
+            <?php
+            
+                // Get the current date
+                $currentDate = new DateTime();
+                // var_dump($currentDate);
+            
+                foreach ($dataJ as $task) : 
 
-                // Parse the task dates in 'dd/mm/yyyy' format
-                $startDate = DateTime::createFromFormat('d/m/Y', $task['starting_date']);
-                $endDate = DateTime::createFromFormat('d/m/Y', $task['end_date']);
-                
-                // Calculate the start and end of the current week
-                $currentWeekStart = new DateTime('this week');
-                $currentWeekEnd = clone $currentWeekStart;
-                $currentWeekEnd->modify('+1 week');
-                
-                // Check if the task's dates fall within the current week
-                if ($startDate >= $currentWeekStart && $endDate <= $currentWeekEnd) : ?>
+                // Parse the task dates in 'yyyy-mm-dd' format
+                $startDate = DateTime::createFromFormat('Y-m-d', $task['starting_date']);
+
+                // Check if the task's start date is within the same week as the current date (7 days)
+                $dateDifference = $startDate->diff($currentDate)->days;
+            
+                if ($dateDifference >= 0 && $dateDifference <= 6) : ?>
 
                 <tr>
 
                     <td><?php echo $task['task_description']; ?></td>
                     <td><?php echo $task['author']; ?></td>
                     <td><?php echo $startDate->format('d/m/Y'); ?></td>
-                    <td><?php echo $endDate->format('d/m/Y'); ?></td>
+                    <td><?php echo $task['end_date']; ?></td>
                     <td><?php echo $task['status']; ?></td>
 
                     <!-- Completar descripción de la función form-->
@@ -60,10 +62,11 @@ if (isset($dataJ)) : ?>
                     </td>
 
                 </tr>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+                <?php endif;
+        endforeach;
+        ?>
+    </tbody>
+</table>
 <?php else : ?>
     <!-- Cuando $dataJ no está disponible -->
     <p>Archivo no disponible.</p>

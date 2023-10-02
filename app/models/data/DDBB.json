@@ -2,24 +2,24 @@
     {
         "task_description": "a\u00f1ado tarea",
         "author": "Alex",
-        "starting_date": "2023-10-02",
-        "end_date": "2023-10-02",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
         "status": "Pending",
         "id": 1
     },
     {
         "task_description": "a\u00f1ado tarea",
         "author": "Rosa",
-        "starting_date": "2023-10-02",
-        "end_date": "2023-10-02",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
         "status": "Pending",
         "id": 2
     },
     {
         "task_description": "Semana 1",
         "author": "Alex",
-        "starting_date": "2023-10-02",
-        "end_date": "2023-10-02",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
         "status": "Ongoing",
         "id": 3
     },
@@ -27,7 +27,7 @@
         "task_description": "Semana 2",
         "author": "Alex",
         "starting_date": "2023-10-02",
-        "end_date": "2023-10-03",
+        "end_date": "2023-10-05",
         "status": "Pending",
         "id": 4
     },
@@ -54,5 +54,13 @@
         "end_date": "2024-10-03",
         "status": "Pending",
         "id": 7
+    },
+    {
+        "task_description": "tarea vieja ",
+        "author": "Alex",
+        "starting_date": "2023-09-21",
+        "end_date": "2023-09-29",
+        "status": "Pending",
+        "id": null
     }
 ]
