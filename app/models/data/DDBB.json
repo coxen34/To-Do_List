@@ -29,7 +29,7 @@
         "author": "Maribel",
         "starting_date": "2023-09-22",
         "end_date": "2023-09-21",
-        "status": "finalizado"
+        "status": "Completed"
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "author": "Fil",
         "starting_date": "2023-09-22",
         "end_date": "2023-09-30",
-        "status": "en ejecucion"
+        "status": "Ongoing"
     },
     {
         "id": 6,
