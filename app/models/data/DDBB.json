@@ -174,5 +174,13 @@
         "end_date": "2023-10-04",
         "status": "Ongoing",
         "id": null
+    },
+    {
+        "task_description": "Probando inputs",
+        "author": "Rose",
+        "starting_date": "2023-10-05",
+        "end_date": "2023-10-12",
+        "status": "Pending",
+        "id": null
     }
 ]
