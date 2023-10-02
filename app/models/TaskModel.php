@@ -77,6 +77,32 @@ class TaskModel {
         // Escribe el nuevo JSON en el archivo
         file_put_contents($this->jsonPath, $newJsonData);
     }
+    // METODO BORRAR TAREA
+    public function deleteTask($taskId) {
+
+        $jsonData = file_get_contents($this->jsonPath);
+        $tasks = json_decode($jsonData, true);
+    
+        foreach ($tasks as $key => $task) {
+    
+            if ($task['id'] == $taskId) {
+    
+                // Remove the task from the tasks array
+                unset($tasks[$key]);
+    
+                break;
+    
+            }
+    
+        }
+    
+        // Re-index the array to ensure it's sequential
+        $tasks = array_values($tasks);
+    
+        $newJsonData = json_encode($tasks, JSON_PRETTY_PRINT);
+        file_put_contents($this->jsonPath, $newJsonData);
+    
+        }
 }
 
     
