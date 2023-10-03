@@ -191,6 +191,10 @@ class ApplicationController extends Controller
     }
     public function completedAction()
     {
+    }
+
+    public function weeklyAction() {
+
         $dataJ = [];
 
         $dataJson = new TaskModel();
@@ -200,4 +204,28 @@ class ApplicationController extends Controller
 
         $this->view->dataJ = $dataJ;
     }
+
+        
+    public function monthlyAction() {
+
+        $dataJ = [];
+
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        $this->view->dataJ = $dataJ;
+        
+    }
+
+    public function yearlyAction() {
+
+        $dataJ = [];
+
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        $this->view->dataJ = $dataJ;
+        
+    }
+   
 }

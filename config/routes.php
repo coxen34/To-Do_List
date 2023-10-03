@@ -23,7 +23,12 @@ $routes = array(
 	'/deleteTask' 	=>	'application#deleteTask',
 	'/pending' 		=>	'application#pending',
 	'/ongoing' 		=>	'application#ongoing',
-	'/completed' 	=>	'application#completed'
+	'/completed' 	=>	'application#completed',
+	'/weekly'       =>  'application#weekly',
+	'/monthly'       =>  'application#monthly',
+	'/yearly'       =>  'application#yearly'
+
+
 
 
 );
