@@ -152,14 +152,12 @@
         "id": 22
     },
     {
-
         "task_description": "a\u00f1ado tarea",
         "author": "Alex",
         "starting_date": "2023-10-03",
         "end_date": "2023-10-05",
         "status": "Pending",
         "id": 1
-
     },
     {
         "task_description": "a\u00f1ado tarea",
@@ -232,5 +230,69 @@
         "end_date": "2023-10-02",
         "status": "Completed",
         "id": 25
+    },
+    {
+        "task_description": "Vuelvo a probar",
+        "author": "Rose",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-03",
+        "status": "Completed",
+        "id": 26
+    },
+    {
+        "task_description": "Probando inputs",
+        "author": "Rose",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
+        "status": "Pending",
+        "id": 27
+    },
+    {
+        "task_description": "Por qu\u00e9???",
+        "author": "Albert",
+        "starting_date": "2023-10-04",
+        "end_date": "2023-10-05",
+        "status": "Pending",
+        "id": 28
+    },
+    {
+        "task_description": "Vuelvo a probar",
+        "author": "Albert",
+        "starting_date": "2023-10-06",
+        "end_date": "2023-10-07",
+        "status": "Pending",
+        "id": 29
+    },
+    {
+        "task_description": "Tarea ",
+        "author": "Albert",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-03",
+        "status": "Completed",
+        "id": 30
+    },
+    {
+        "task_description": "Tarea",
+        "author": "Alex",
+        "starting_date": "2023-10-04",
+        "end_date": "2023-10-04",
+        "status": "Pending",
+        "id": 31
+    },
+    {
+        "task_description": "Tarea",
+        "author": "Carla",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-03",
+        "status": "Completed",
+        "id": 32
+    },
+    {
+        "task_description": "Tarea",
+        "author": "Jana",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-03",
+        "status": "Completed",
+        "id": 33
     }
 ]

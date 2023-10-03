@@ -27,18 +27,19 @@
 
 		.stickyS {
 			position: sticky;
-			top: 60%;
+			top:50%;
 			z-index: 1003;
 		}
+		
 	</style>
 
 
 	<title>To-Do_List</title>
 </head>
 
-<body class="bg-slate-600 min-h-screen flex flex-col min-h-screen flex flex-col">
+<body class="bg-slate-600 min-h-screen flex flex-col ">
 
-	
+
 	<header class="bg-yellow-500 py-4 sticky-header">
 		<div class="container mx-auto text-center">
 			<a href="getAllTasks">
@@ -50,12 +51,13 @@
 		</div>
 	</header>
 
-	<!-- <main class="flex-grow"> -->
-	<main class="flex flex-col mt-2 bg-black-500">
-		<main class="flex mt-2">
+
+	<main class="flex flex-col mt-2 bg-black-500 min-h-screen">
+		<div class="flex">
+
 			<!-- Aside  -->
 
-			<aside class="w-1/4 px-6  stickyAside">
+			<aside class="w-1/4 px-6 ">
 
 
 				<div class="mt-6 ml-5 stickyF">
@@ -125,25 +127,27 @@
 					</div>
 				</form>
 				<!-- Other content in the main section -->
-				<div><?= $this->content() ?></div>
 
+				<div class="mt-4"><?= $this->content() ?></div>
+			</div>
 
-			</div>
-		</main>
-		<footer class="flex flex-col mt-2 bg-yellow-500 text-center py-4 mt-auto">
-			<div>
-				<p class="text-lg font-semibold text-transparent">IT Academy || 2023</p>
-			</div>
-			<div>
-				<p class="text-lg font-semibold text-white">Developers Team</p>
-			</div>
-			<div>
-				<p class="text-lg font-semibold text-white">IT Academy || 2023</p>
-			</div>
-			<div>
-				<p class="text-lg font-semibold text-transparent">IT Academy || 2023</p>
-			</div>
-		</footer>
+		</div>
+	</main>
+	<footer class="flex flex-col bg-yellow-500 text-center py-4 ">
+		<div>
+			<p class="text-lg font-semibold text-transparent">IT Academy || 2023</p>
+		</div>
+		<div>
+			<p class="text-lg font-semibold text-white">Developers Team</p>
+		</div>
+		<div>
+			<p class="text-lg font-semibold text-white">IT Academy || 2023</p>
+		</div>
+		<div>
+			<p class="text-lg font-semibold text-transparent">IT Academy || 2023</p>
+		</div>
+	</footer>
+
 </body>
 
 </html>
