@@ -191,6 +191,14 @@ class ApplicationController extends Controller
     }
     public function completedAction()
     {
+        $dataJ = [];
+
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        //return $dataJ;
+
+        $this->view->dataJ = $dataJ;
     }
 
     public function weeklyAction() {

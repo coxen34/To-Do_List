@@ -1,21 +1,5 @@
 [
     {
-        "id": 2,
-        "task_description": "Tarea2",
-        "author": "Albert",
-        "starting_date": "2023-09-22",
-        "end_date": null,
-        "status": "Completed"
-    },
-    {
-        "id": 3,
-        "task_description": "Tarea3",
-        "author": "Jana",
-        "starting_date": "2023-09-22",
-        "end_date": null,
-        "status": "Completed"
-    },
-    {
         "id": 4,
         "task_description": "Tarea4",
         "author": "Maribel",
