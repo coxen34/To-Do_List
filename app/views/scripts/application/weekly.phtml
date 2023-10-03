@@ -20,24 +20,24 @@ if (isset($dataJ)) : ?>
             
                 // Get the current date
                 $currentDate = new DateTime();
-                // var_dump($currentDate);
             
                 foreach ($dataJ as $task) : 
 
                 // Parse the task dates in 'yyyy-mm-dd' format
                 $startDate = DateTime::createFromFormat('Y-m-d', $task['starting_date']);
+                $endDate = DateTime::createFromFormat('Y-m-d', $task['end_date']);
 
-                // Check if the task's start date is within the same week as the current date (7 days)
-                $dateDifference = $startDate->diff($currentDate)->days;
+                // Calculate the difference in days between the start date and current date
+                $dateDifference = $startDate->diff($currentDate)->format('%a');
             
-                if ($dateDifference >= 0 && $dateDifference <= 6) : ?>
+                if ($dateDifference == 0 && $dateDifference <= 6) : ?>
 
                 <tr>
 
                     <td><?php echo $task['task_description']; ?></td>
                     <td><?php echo $task['author']; ?></td>
                     <td><?php echo $startDate->format('d/m/Y'); ?></td>
-                    <td><?php echo $task['end_date']; ?></td>
+                    <td><?php echo $endDate->format('d/m/Y'); ?></td>
                     <td><?php echo $task['status']; ?></td>
 
                     <!-- Completar descripción de la función form-->
@@ -54,11 +54,12 @@ if (isset($dataJ)) : ?>
                     </button>
                     </td>
                     <td>
-                            <form method="post" action="deleteTask">
+                        <form method="post" action="deleteTask">
                             <input type="hidden" name="taskId" value="<?php echo $task['id']; ?>">
                         <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">
                             <i class="fa-solid fa-trash"></i>
                         </button>
+                        </form>
                     </td>
 
                 </tr>
