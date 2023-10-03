@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "id": 2,
         "task_description": "Tarea2",
         "author": "Albert",
@@ -166,12 +167,68 @@
         "end_date": "2023-10-04",
         "status": "Ongoing",
         "id": 22
+=======
+        "task_description": "a\u00f1ado tarea",
+        "author": "Alex",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
+        "status": "Pending",
+        "id": 1
+>>>>>>> 3bb2b168a448693ceff6e2015f22d9e277f3d091
     },
     {
-        "task_description": "Probando inputs",
-        "author": "Rose",
-        "starting_date": "2023-10-05",
-        "end_date": "2023-10-12",
+        "task_description": "a\u00f1ado tarea",
+        "author": "Rosa",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
+        "status": "Pending",
+        "id": 2
+    },
+    {
+        "task_description": "Semana 1",
+        "author": "Alex",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
+        "status": "Ongoing",
+        "id": 3
+    },
+    {
+        "task_description": "Semana 2",
+        "author": "Alex",
+        "starting_date": "2023-10-17",
+        "end_date": "2023-10-20",
+        "status": "Pending",
+        "id": 4
+    },
+    {
+        "task_description": "Semana 3",
+        "author": "Alex",
+        "starting_date": "2023-10-02",
+        "end_date": "2023-10-04",
+        "status": "Pending",
+        "id": 5
+    },
+    {
+        "task_description": "mes diciembre 1",
+        "author": "Alex",
+        "starting_date": "2023-12-02",
+        "end_date": "2023-12-02",
+        "status": "Pending",
+        "id": 6
+    },
+    {
+        "task_description": "a\u00f1o que viene",
+        "author": "Alex",
+        "starting_date": "2024-10-02",
+        "end_date": "2024-10-03",
+        "status": "Pending",
+        "id": 7
+    },
+    {
+        "task_description": "tarea vieja ",
+        "author": "Alex",
+        "starting_date": "2023-09-21",
+        "end_date": "2023-09-29",
         "status": "Pending",
         "id": 23
     },

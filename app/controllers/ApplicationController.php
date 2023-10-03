@@ -142,9 +142,8 @@ class ApplicationController extends Controller
     public function deleteTaskAction()
     {
 
-
-        // checks the HTTP request method to see if it's a POST request.
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // checks the HTTP request method to see if it's a POST request.
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             //Retrieve the value of the "taskId" parameter from the POST data.
             $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
@@ -182,22 +181,39 @@ class ApplicationController extends Controller
     {
         $dataJ = [];
 
-        $dataJson = new TaskModel();
-        $dataJ = $dataJson->getAllTasks();
-
-        //return $dataJ;
-
-        $this->view->dataJ = $dataJ;
     }
-    public function completedAction()
-    {
+
+    public function weeklyAction() {
+
         $dataJ = [];
 
         $dataJson = new TaskModel();
         $dataJ = $dataJson->getAllTasks();
 
-        //return $dataJ;
+        $this->view->dataJ = $dataJ;
+        
+    }
+
+    public function monthlyAction() {
+
+        $dataJ = [];
+
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
 
         $this->view->dataJ = $dataJ;
+        
     }
+
+    public function yearlyAction() {
+
+        $dataJ = [];
+
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        $this->view->dataJ = $dataJ;
+        
+    }
+   
 }
