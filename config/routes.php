@@ -21,6 +21,11 @@ $routes = array(
 	'/ediTask'		=>	'application#ediTask',
 	'/updateTask'	=>	'application#updateTask',
 	'/deleteTask' =>	'application#deleteTask',
-	'/weekly'       =>  'application#weekly'
+	'/weekly'       =>  'application#weekly',
+	'/monthly'       =>  'application#monthly',
+	'/yearly'       =>  'application#yearly'
+
+
+
 
 );

@@ -128,7 +128,6 @@ class ApplicationController extends Controller
 
     public function deleteTaskAction() {
 
-
     // checks the HTTP request method to see if it's a POST request.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -168,6 +167,26 @@ class ApplicationController extends Controller
         
     }
 
+    public function monthlyAction() {
 
-    
+        $dataJ = [];
+
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        $this->view->dataJ = $dataJ;
+        
+    }
+
+    public function yearlyAction() {
+
+        $dataJ = [];
+
+        $dataJson = new TaskModel();
+        $dataJ = $dataJson->getAllTasks();
+
+        $this->view->dataJ = $dataJ;
+        
+    }
+   
 }
