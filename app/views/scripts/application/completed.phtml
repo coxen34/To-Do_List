@@ -8,11 +8,11 @@ if (isset($dataJ)) : ?>
     <table style='border:1' class="min-w-full divide-y divide-gray-200">
         <thead>
             <tr>
-                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Descripción de la Tarea</th>
-                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Autor</th>
-                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Fecha de Inicio</th>
-                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Fecha de Finalización</th>
-                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider ">Task Description</th>
+                <th class="px-6 py-4 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider ">Author</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Starting Date</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">End Date</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Status</th>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
@@ -22,7 +22,7 @@ if (isset($dataJ)) : ?>
             ?>
                     <tr>
 
-                        <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['task_description']; ?></td>
+                        <td class="px-6 py-3 whitespace-no-wrap"><?php echo $task['task_description']; ?></td>
                         <td><?php echo $task['author']; ?></td>
                         <td><?php echo $task['starting_date']; ?></td>
                         <td><?php echo $task['end_date']; ?></td>
