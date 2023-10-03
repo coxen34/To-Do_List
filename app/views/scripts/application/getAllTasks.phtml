@@ -8,8 +8,8 @@ if (isset($dataJ)) : ?>
 
 // Check if a success message is present in the session
 if (isset($_SESSION['success_message'])) {
-
-    echo '<div class="success-message">' . $_SESSION['success_message'] . '</div>';
+    
+    echo '<div class="success-message bg-red-600">' . $_SESSION['success_message'] . '</div>';
 
     // Remove the success message from the session to prevent it from being displayed on subsequent page loads
     unset($_SESSION['success_message']);
@@ -39,7 +39,6 @@ if (isset($_SESSION['success_message'])) {
                     <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['end_date']; ?></td>
                     <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['status']; ?></td>
 
-                    <!-- Completar descripción de la función form-->
                     <!-- Pero vamos que me lleva a: ediTask.phtml cogiendo el id de la tarea -->
                     <td>
                         <form method="post" action="ediTask">
