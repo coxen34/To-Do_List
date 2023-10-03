@@ -201,7 +201,8 @@ class ApplicationController extends Controller
         $this->view->dataJ = $dataJ;
     }
 
-    public function weeklyAction() {
+    public function weeklyAction()
+    {
 
         $dataJ = [];
 
@@ -213,8 +214,9 @@ class ApplicationController extends Controller
         $this->view->dataJ = $dataJ;
     }
 
-        
-    public function monthlyAction() {
+
+    public function monthlyAction()
+    {
 
         $dataJ = [];
 
@@ -222,10 +224,10 @@ class ApplicationController extends Controller
         $dataJ = $dataJson->getAllTasks();
 
         $this->view->dataJ = $dataJ;
-        
     }
 
-    public function yearlyAction() {
+    public function yearlyAction()
+    {
 
         $dataJ = [];
 
@@ -233,7 +235,5 @@ class ApplicationController extends Controller
         $dataJ = $dataJson->getAllTasks();
 
         $this->view->dataJ = $dataJ;
-        
     }
-   
 }

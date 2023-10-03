@@ -14,7 +14,7 @@
 // );
 
 $routes = array(
-	'/'				=>  'application#index',
+
 	'/'				=>  'application#getAllTasks',
 	'/getAllTasks'  =>	'application#getAllTasks',
 	'/createTask'	=>	'application#createTask',
@@ -25,7 +25,7 @@ $routes = array(
 	'/ongoing' 		=>	'application#ongoing',
 	'/completed' 	=>	'application#completed',
 	'/weekly'       =>  'application#weekly',
-	'/monthly'       =>  'application#monthly',
+	'/monthly'      =>  'application#monthly',
 	'/yearly'       =>  'application#yearly'
 
 

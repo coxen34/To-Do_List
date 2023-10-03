@@ -35,10 +35,10 @@ if (isset($dataJ)) : ?>
                 <tr>
 
                     <td class="px-6 py-4 whitespace-no-wrap" ><?php echo $task['task_description']; ?></td>
-                    <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['author']; ?></td>
-                    <td class="px-6 py-4 whitespace-no-wrap"><?php echo $startDate->format('d/m/Y'); ?></td>
-                    <td class="px-6 py-4 whitespace-no-wrap"><?php echo $endDate->format('d/m/Y'); ?></td>
-                    <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['status']; ?></td>
+                    <td ><?php echo $task['author']; ?></td>
+                    <td ><?php echo $startDate->format('d/m/Y'); ?></td>
+                    <td ><?php echo $endDate->format('d/m/Y'); ?></td>
+                    <td ><?php echo $task['status']; ?></td>
 
                     <!-- Completar descripción de la función form-->
                     <!-- Pero vamos que me lleva a: ediTask.phtml cogiendo el id de la tarea -->

@@ -4,21 +4,20 @@ $dataJ = $this->dataJ;
 // Comprobamos si la variable está definida para poder mostrar los datos
 if (isset($dataJ)) : ?>
 
-<?php
+    <?php
 
-// Check if a success message is present in the session
-if (isset($_SESSION['success_message'])) {
-    
-    echo '<div class="success-message bg-red-600 w-1/3">' . $_SESSION['success_message'] . '</div>';
+    // Check if a success message is present in the session
+    if (isset($_SESSION['success_message'])) {
 
-    // Remove the success message from the session to prevent it from being displayed on subsequent page loads
-    unset($_SESSION['success_message']);
+        echo '<div class="success-message bg-red-600 w-1/3">' . $_SESSION['success_message'] . '</div>';
 
-}
+        // Remove the success message from the session to prevent it from being displayed on subsequent page loads
+        unset($_SESSION['success_message']);
+    }
 
-?>  
-<!-- Mostramos los datos en una tabla  -->
-    <table style='border:1'class="min-w-full divide-y divide-gray-200">
+    ?>
+    <!-- Mostramos los datos en una tabla  -->
+    <table style='border:1' class="min-w-full divide-y divide-gray-200">
         <thead>
             <tr>
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Descripción de la Tarea</th>
@@ -30,7 +29,7 @@ if (isset($_SESSION['success_message'])) {
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
             <?php foreach ($dataJ as $task) : ?>
-                
+
                 <tr>
 
                     <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['task_description']; ?></td>
@@ -54,9 +53,9 @@ if (isset($_SESSION['success_message'])) {
                     <td>
                         <form method="post" action="deleteTask">
                             <input type="hidden" name="taskId" value="<?php echo $task['id']; ?>">
-                        <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
+                            <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </form>
                     </td>
 
@@ -68,4 +67,3 @@ if (isset($_SESSION['success_message'])) {
     <!-- Cuando $dataJ no está disponible -->
     <p>Archivo no disponible.</p>
 <?php endif; ?>
-

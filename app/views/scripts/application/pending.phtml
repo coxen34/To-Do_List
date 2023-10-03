@@ -5,7 +5,7 @@ $foundPendingTask = false;
 // Comprobamos si la variable está definida para poder mostrar los datos
 if (isset($dataJ)) : ?>
     <!-- Mostramos los datos en una tabla  -->
-    <table style='border:1'class="min-w-full divide-y divide-gray-200">
+    <table style='border:1' class="min-w-full divide-y divide-gray-200">
         <thead>
             <tr>
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Descripción de la Tarea</th>
@@ -25,10 +25,10 @@ if (isset($dataJ)) : ?>
                     <tr>
 
                         <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['task_description']; ?></td>
-                        <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['author']; ?></td>
-                        <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['starting_date']; ?></td>
-                        <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['end_date']; ?></td>
-                        <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['status']; ?></td>
+                        <td><?php echo $task['author']; ?></td>
+                        <td><?php echo $task['starting_date']; ?></td>
+                        <td><?php echo $task['end_date']; ?></td>
+                        <td><?php echo $task['status']; ?></td>
 
                         <!-- Completar descripción de la función form-->
                         <!-- Pero vamos que me lleva a: ediTask.phtml cogiendo el id de la tarea -->
