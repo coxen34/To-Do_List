@@ -8,14 +8,14 @@ if (isset($dataJ)) : ?>
     <table style='border:1'>
         <thead>
             <tr>
-                <th>Descripción de la Tarea</th>
-                <th>Autor</th>
-                <th>Fecha de Inicio</th>
-                <th>Fecha de Finalización</th>
-                <th>Estado</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Descripción de la Tarea</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Autor</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Fecha de Inicio</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Fecha de Finalización</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Estado</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="bg-white divide-y divide-gray-200">
             <?php
             
                 // Get the current date
@@ -34,11 +34,11 @@ if (isset($dataJ)) : ?>
 
                 <tr>
 
-                    <td><?php echo $task['task_description']; ?></td>
-                    <td><?php echo $task['author']; ?></td>
-                    <td><?php echo $startDate->format('d/m/Y'); ?></td>
-                    <td><?php echo $endDate->format('d/m/Y'); ?></td>
-                    <td><?php echo $task['status']; ?></td>
+                    <td class="px-6 py-4 whitespace-no-wrap" ><?php echo $task['task_description']; ?></td>
+                    <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['author']; ?></td>
+                    <td class="px-6 py-4 whitespace-no-wrap"><?php echo $startDate->format('d/m/Y'); ?></td>
+                    <td class="px-6 py-4 whitespace-no-wrap"><?php echo $endDate->format('d/m/Y'); ?></td>
+                    <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['status']; ?></td>
 
                     <!-- Completar descripción de la función form-->
                     <!-- Pero vamos que me lleva a: ediTask.phtml cogiendo el id de la tarea -->

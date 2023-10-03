@@ -9,7 +9,7 @@ if (isset($dataJ)) : ?>
 // Check if a success message is present in the session
 if (isset($_SESSION['success_message'])) {
     
-    echo '<div class="success-message bg-red-600">' . $_SESSION['success_message'] . '</div>';
+    echo '<div class="success-message bg-red-600 w-1/3">' . $_SESSION['success_message'] . '</div>';
 
     // Remove the success message from the session to prevent it from being displayed on subsequent page loads
     unset($_SESSION['success_message']);
