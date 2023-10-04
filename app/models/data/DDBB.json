@@ -1,37 +1,298 @@
 [
     {
-        "descripcion": "Tarea1",
-        "creado por": "Rosa",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-10-21",
-        "estado": "pendiente"
+        "id": 4,
+        "task_description": "Tarea4",
+        "author": "Maribel",
+        "starting_date": "2023-09-22",
+        "end_date": "2023-09-21",
+        "status": "Completed"
     },
     {
-        "descripcion": "Tarea2",
-        "creado por": "Albert",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-11-21",
-        "estado": "pendiente"
+        "id": 5,
+        "task_description": "Tarea5",
+        "author": "Fil",
+        "starting_date": "2023-09-22",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
     },
     {
-        "descripcion": "Tarea3",
-        "creado por": "Jana",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-11-21",
-        "estado": "pendiente"
+        "id": 6,
+        "task_description": "Probando inputs",
+        "author": "Rose",
+        "starting_date": "2023-10-01",
+        "end_date": "2023-10-01",
+        "status": "value1"
     },
     {
-        "descripcion": "Tarea4",
-        "creado por": "Maribel",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-09-21",
-        "estado": "finalizado"
+        "id": 7,
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
     },
     {
-        "descripcion": "Tarea5",
-        "creado por": "Fil",
-        "fecha_creacion": "2023-09-22 18:34:29",
-        "fecha_fin": "2023-09-30",
-        "estado": "en ejecucion"
+        "id": 8,
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
+    },
+    {
+        "id": 9,
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
+    },
+    {
+        "id": 10,
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Ongoing"
+    },
+    {
+        "id": 11,
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Completed"
+    },
+    {
+        "id": 12,
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Completed"
+    },
+    {
+        "id": 13,
+        "task_description": "Arreglando select",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-09-30",
+        "status": "Completed"
+    },
+    {
+        "id": 14,
+        "task_description": "Cuantas veces lo inserta??",
+        "author": "Rose",
+        "starting_date": "2023-09-30",
+        "end_date": "2023-10-01",
+        "status": "Pending"
+    },
+    {
+        "id": 15,
+        "task_description": "Sigue funcionando?",
+        "author": "Rose",
+        "starting_date": "2023-10-01",
+        "end_date": "2023-10-02",
+        "status": "Ongoing"
+    },
+    {
+        "id": 16,
+        "task_description": "Vuelvo a probar",
+        "author": "Rose",
+        "starting_date": "2023-10-01",
+        "end_date": "2023-10-01",
+        "status": "Ongoing"
+    },
+    {
+        "id": 17,
+        "task_description": "Que son estos warnings?",
+        "author": "Rose",
+        "starting_date": "2023-10-01",
+        "end_date": "2023-10-01",
+        "status": "Ongoing"
+    },
+    {
+        "id": 18,
+        "task_description": "Han desaparecido los wwarnings",
+        "author": "Rose",
+        "starting_date": "2023-10-01",
+        "end_date": "2023-10-01",
+        "status": "Completed"
+    },
+    {
+        "id": 19,
+        "task_description": "Pruebo de nuevo",
+        "author": "Rose",
+        "starting_date": "2023-10-01",
+        "end_date": "2023-10-01",
+        "status": "Completed"
+    },
+    {
+        "task_description": "64 APPcONTROLLER",
+        "author": "Rose",
+        "starting_date": "2023-10-27",
+        "end_date": "2023-10-28",
+        "status": "Ongoing",
+        "id": 20
+    },
+    {
+        "task_description": "elimino addTask",
+        "author": "Rose",
+        "starting_date": "2023-10-01",
+        "end_date": "2023-10-01",
+        "status": "Ongoing",
+        "id": 21
+    },
+    {
+        "task_description": "Prueba mensaje",
+        "author": "Rose",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-04",
+        "status": "Ongoing",
+        "id": 22
+    },
+    {
+        "task_description": "a\u00f1ado tarea",
+        "author": "Alex",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
+        "status": "Pending",
+        "id": 1
+    },
+    {
+        "task_description": "a\u00f1ado tarea",
+        "author": "Rosa",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
+        "status": "Pending",
+        "id": 2
+    },
+    {
+        "task_description": "Semana 1",
+        "author": "Alex",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
+        "status": "Ongoing",
+        "id": 3
+    },
+    {
+        "task_description": "Semana 2",
+        "author": "Alex",
+        "starting_date": "2023-10-17",
+        "end_date": "2023-10-20",
+        "status": "Pending",
+        "id": 4
+    },
+    {
+        "task_description": "Semana 3",
+        "author": "Alex",
+        "starting_date": "2023-10-02",
+        "end_date": "2023-10-04",
+        "status": "Pending",
+        "id": 5
+    },
+    {
+        "task_description": "mes diciembre 1",
+        "author": "Alex",
+        "starting_date": "2023-12-02",
+        "end_date": "2023-12-02",
+        "status": "Pending",
+        "id": 6
+    },
+    {
+        "task_description": "a\u00f1o que viene",
+        "author": "Alex",
+        "starting_date": "2024-10-02",
+        "end_date": "2024-10-03",
+        "status": "Pending",
+        "id": 7
+    },
+    {
+        "task_description": "tarea vieja ",
+        "author": "Alex",
+        "starting_date": "2023-09-21",
+        "end_date": "2023-09-29",
+        "status": "Pending",
+        "id": 23
+    },
+    {
+        "task_description": "Probando AI",
+        "author": "Rose",
+        "starting_date": "2023-10-02",
+        "end_date": "2023-10-02",
+        "status": "Ongoing",
+        "id": 24
+    },
+    {
+        "task_description": "AutoIncrement",
+        "author": "Rose",
+        "starting_date": "2023-10-02",
+        "end_date": "2023-10-02",
+        "status": "Completed",
+        "id": 25
+    },
+    {
+        "task_description": "Vuelvo a probar",
+        "author": "Rose",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-03",
+        "status": "Completed",
+        "id": 26
+    },
+    {
+        "task_description": "Probando inputs",
+        "author": "Rose",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-05",
+        "status": "Pending",
+        "id": 27
+    },
+    {
+        "task_description": "Por qu\u00e9???",
+        "author": "Albert",
+        "starting_date": "2023-10-04",
+        "end_date": "2023-10-05",
+        "status": "Pending",
+        "id": 28
+    },
+    {
+        "task_description": "Vuelvo a probar",
+        "author": "Albert",
+        "starting_date": "2023-10-06",
+        "end_date": "2023-10-07",
+        "status": "Pending",
+        "id": 29
+    },
+    {
+        "task_description": "Tarea ",
+        "author": "Albert",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-03",
+        "status": "Completed",
+        "id": 30
+    },
+    {
+        "task_description": "Tarea",
+        "author": "Alex",
+        "starting_date": "2023-10-04",
+        "end_date": "2023-10-04",
+        "status": "Pending",
+        "id": 31
+    },
+    {
+        "task_description": "Tarea",
+        "author": "Carla",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-03",
+        "status": "Completed",
+        "id": 32
+    },
+    {
+        "task_description": "Tarea",
+        "author": "Jana",
+        "starting_date": "2023-10-03",
+        "end_date": "2023-10-03",
+        "status": "Completed",
+        "id": 33
     }
 ]

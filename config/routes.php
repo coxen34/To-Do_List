@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Se utiliza para definir las rutas en el sistema.
@@ -9,18 +9,26 @@
  * '/' => 'index#index',
  * '/calendar' => 'calendar#index'
  */
-// !Lo saco del array routes  AVER K PASA
- 
- 	//'/ruta' => 'test#ruta',
-//'/test' => 'test#index'
-//'/' => 'ToDo#index',
+// $routes = array(
+// 	'/test' => 'test#index'
+// );
 
 $routes = array(
-	'/' => 'ToDo#index',
-	'/index' => 'ToDo#index',
-	'/hello' => 'ToDo#hello',
-	'/ruta' => 'test#ruta',
-	'/test' => 'test#index',
-	'/createTask' => 'ToDo#createTask'
-	
+
+	'/'				=>  'application#getAllTasks',
+	'/getAllTasks'  =>	'application#getAllTasks',
+	'/createTask'	=>	'application#createTask',
+	'/ediTask'		=>	'application#ediTask',
+	'/updateTask'	=>	'application#updateTask',
+	'/deleteTask' 	=>	'application#deleteTask',
+	'/pending' 		=>	'application#pending',
+	'/ongoing' 		=>	'application#ongoing',
+	'/completed' 	=>	'application#completed',
+	'/weekly'       =>  'application#weekly',
+	'/monthly'      =>  'application#monthly',
+	'/yearly'       =>  'application#yearly'
+
+
+
+
 );
