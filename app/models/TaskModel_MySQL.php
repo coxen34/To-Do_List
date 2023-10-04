@@ -1,26 +1,33 @@
 <?php
 
-class TaskModel
+class TaskModel extends Model
 {
 
-    protected $tasks = [];
-    protected $jsonPath;
-
-
-    public function __construct()
-    {
-
-        $this->jsonPath = ROOT_PATH . '/app/models/data/DDBB.json';
-    }
+    protected $_table = 'todo';
 
     public function getAllTasks()
     {
 
-        // $data= file_get_contents('/..app/models/data/DDBB.json') ;
-        $data = file_get_contents($this->jsonPath);
-        // El segundo argumento "true" indica que se debe devolver un arreglo asociativo en lugar de un objeto.
-        $tasks = json_decode($data, true);
-        return $tasks;
+         // SQL query
+         $sql = 'select * from ' . $this->_table;
+         $statement = $this->_dbh->prepare($sql);
+         $statement->execute();
+         //error handling
+         if (!$statement){
+             return ("GetTasks-Model: MySQL DataBase not reachable.");
+         }
+ 
+         // store all returned rows in array of stdClass objects
+         $result = $statement->fetchAll(PDO::FETCH_OBJ);
+         //error handling
+         if (!$result){
+             return ("GetTasks-Model: MySQL DataBase is empty");
+         }
+ 
+         // Convert stdClass objects to associative arrays
+         $tasks = json_decode(json_encode($result), true);
+         
+         return $tasks;
     }
     // ___________METODO CREAR TAREA_____________
     public function createTask($newTask)
@@ -103,22 +110,5 @@ class TaskModel
         file_put_contents($this->jsonPath, $newJsonData);
         // ___________________STATUS VIEWS_______________________
     }
-    public function pending()
-    {
-        $data = file_get_contents($this->jsonPath);
-        $tasks = json_decode($data, true);
-        return $tasks;
-    }
-    public function ongoing()
-    {
-        $data = file_get_contents($this->jsonPath);
-        $tasks = json_decode($data, true);
-        return $tasks;
-    }
-    public function completed()
-    {
-        $data = file_get_contents($this->jsonPath);
-        $tasks = json_decode($data, true);
-        return $tasks;
-    }
+  
 }

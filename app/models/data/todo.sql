@@ -1,4 +1,4 @@
--- MySQL Workbench Forward Engineering
+todo-- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-INSERT INTO todo (task_description, author, starting_date, end_date, status)
+/* INSERT INTO todo (task_description, author, starting_date, end_date, status)
 VALUES
     ('Task 1', 'Author 1', '2023-10-04', '2023-10-10', 'pending'),
     ('Task 2', 'Author 2', '2023-10-05', '2023-10-11', 'ongoing'),
@@ -40,6 +40,4 @@ VALUES
     ('Task 7', 'Author 7', '2023-10-10', '2023-10-16', 'pending'),
     ('Task 8', 'Author 8', '2023-10-11', '2023-10-17', 'ongoing'),
     ('Task 9', 'Author 9', '2023-10-12', '2023-10-18', 'completed'),
-    ('Task 10', 'Author 10', '2023-10-13', '2023-10-19', 'pending');
-
-select * from todo;
+    ('Task 10', 'Author 10', '2023-10-13', '2023-10-19', 'pending'); */
