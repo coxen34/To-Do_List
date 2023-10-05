@@ -34,20 +34,6 @@ class ApplicationController extends Controller
             $enDate = $_POST["enDate"];
             $status = $_POST["status"];
 
-            //PROCESO PARA OBTENER EL ULTIMO ID
-            $lastId = 0;
-            $dataJ = [];
-
-            $dataJson = new TaskModel();
-            $dataJ = $dataJson->getAllTasks();
-            foreach ($dataJ as $task) {
-                if ($task["id"] > $lastId) {
-                    $lastId = $task["id"];
-                }
-            }
-
-            $newId = $lastId + 1;
-
             // Crea un nuevo array con los datos del formulario
             $newTask = [
 
@@ -56,12 +42,7 @@ class ApplicationController extends Controller
                 "starting_date" => $startingDate,
                 "end_date" => $enDate,
                 "status" => $status,
-                "id" => $newId
-
-
             ];
-            // $this->view->newTask = $newTask;
-
         }
         if ($newTask !== null) {
             // Llama a un método para agregar la tarea al modelo
@@ -74,7 +55,9 @@ class ApplicationController extends Controller
             // Redirect to the task list or any other appropriate page after deletion
             header("Location: getAllTasks");
         }
+        return $newTask;
     }
+    
     // ___________CONTROLADOR EDITAR TAREA_____________
     public function ediTaskAction()
     {
