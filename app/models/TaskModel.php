@@ -20,4 +20,11 @@ class TaskModel extends Model
          
          return $tasks;
     }
+
+    public function createTask($newTask)
+    {
+
+        $result = $this->save($newTask);
+
+    }
 }
