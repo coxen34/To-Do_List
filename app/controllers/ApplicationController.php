@@ -8,17 +8,17 @@
 class ApplicationController extends Controller
 {
 
+    public function initializeObject()
+    {
+        $todoObject = new TaskModel ();
+        return $todoObject;
+    }
+
     public function getAllTasksAction()
     {
-        $todo = [];
-
-        $todoObject = new TaskModel ();
-
+        $todoObject = $this->initializeObject();
         $todo = $todoObject->getAllTasks();
-
         $this->view->todo = $todo;
-
-        return $todo;
     }
 
     // ___________CONTROLADOR CREAR TAREA_____________

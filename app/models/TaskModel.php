@@ -7,7 +7,6 @@ class TaskModel extends Model
 
     public function getAllTasks()
     {
-
          // SQL query
          $sql = 'select * from ' . $this->_table;
          $statement = $this->_dbh->prepare($sql);
@@ -21,5 +20,4 @@ class TaskModel extends Model
          
          return $tasks;
     }
-  
 }
