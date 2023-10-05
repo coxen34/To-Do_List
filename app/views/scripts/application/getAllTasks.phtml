@@ -1,8 +1,8 @@
 <?php
 
-$dataJ = $this->dataJ;
+$todo = $this->todo;
 // Comprobamos si la variable está definida para poder mostrar los datos
-if (isset($dataJ)) : ?>
+if (isset($todo)) : ?>
 
     <?php
 
@@ -28,7 +28,7 @@ if (isset($dataJ)) : ?>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-            <?php foreach ($dataJ as $task) : ?>
+            <?php foreach ($todo as $task) : ?>
 
                 <tr>
 
@@ -64,6 +64,6 @@ if (isset($dataJ)) : ?>
         </tbody>
     </table>
 <?php else : ?>
-    <!-- Cuando $dataJ no está disponible -->
-    <p>Archivo no disponible.</p>
+    <!-- Cuando $dataMySQL no está disponible -->
+    <p>DataBase not available.</p>
 <?php endif; ?>

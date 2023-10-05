@@ -1,4 +1,4 @@
-todo-- MySQL Workbench Forward Engineering
+/* todo-- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -13,7 +13,8 @@ USE `todo` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`todo`
--- -----------------------------------------------------
+-- ----------------------------------------------------- */
+
 CREATE TABLE IF NOT EXISTS `todo` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `task_description` VARCHAR(45) NOT NULL,

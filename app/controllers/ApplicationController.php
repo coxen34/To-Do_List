@@ -8,27 +8,17 @@
 class ApplicationController extends Controller
 {
 
-    public function indexAction()
-    {
-    }
-
-    public function formAction()
-    {
-    }
-
     public function getAllTasksAction()
     {
+        $todo = [];
 
-        $dataJ = [];
+        $todoObject = new TaskModel ();
 
-        $dataJson = new TaskModel();
-        $dataJ = $dataJson->getAllTasks();
+        $todo = $todoObject->getAllTasks();
 
+        $this->view->todo = $todo;
 
-
-        $this->view->dataJ = $dataJ;
-
-        return $dataJ;
+        return $todo;
     }
 
     // ___________CONTROLADOR CREAR TAREA_____________
