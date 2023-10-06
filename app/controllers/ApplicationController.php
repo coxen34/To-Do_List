@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Controlador base para la aplicación.
  * Agregar cosas generales en este controlador.
@@ -7,11 +8,9 @@
 
 class ApplicationController extends Controller
 {
-
     public function initializeObject()
     {
-        $todoObject = new TaskModel ();
-        return $todoObject;
+        return new TaskModel();
     }
 
     public function getAllTasksAction()
@@ -114,99 +113,21 @@ class ApplicationController extends Controller
 
     public function deleteTaskAction()
     {
+        $taskId = $this->_getParam("taskId");
 
+        if ($taskId !== null) {
+            $todoObject = $this->initializeObject();
 
-        // checks the HTTP request method to see if it's a POST request.
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $success = $todoObject->deleteTask($taskId);
 
-            //Retrieve the value of the "taskId" parameter from the POST data.
-            $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
-
-            if ($taskId !== null) {
-
-                $taskModel = new TaskModel();
-                $taskModel->deleteTask($taskId);
-
-                // Set a task success message in the session
+            if ($success) {
                 $_SESSION['success_message'] = 'Task deleted successfully';
-
-                // Redirect to the task list or any other appropriate page after deletion
-                header("Location: getAllTasks");
-
-                exit();
             } else {
-
-                echo "Task ID doesn't exist.";
+                $_SESSION['error_message'] = 'Error deleting task';
             }
         }
-    } // ___________CONTROLADOR STATUS VIEWS_____________
-    public function pendingAction()
-    {
-        $dataJ = [];
 
-        $dataJson = new TaskModel();
-        $dataJ = $dataJson->getAllTasks();
-
-        //return $dataJ;
-
-        $this->view->dataJ = $dataJ;
-    }
-    public function ongoingAction()
-    {
-        $dataJ = [];
-
-        $dataJson = new TaskModel();
-        $dataJ = $dataJson->getAllTasks();
-
-        //return $dataJ;
-
-        $this->view->dataJ = $dataJ;
-    }
-    public function completedAction()
-    {
-        $dataJ = [];
-
-        $dataJson = new TaskModel();
-        $dataJ = $dataJson->getAllTasks();
-
-        //return $dataJ;
-
-        $this->view->dataJ = $dataJ;
-    }
-
-    public function weeklyAction()
-    {
-
-        $dataJ = [];
-
-        $dataJson = new TaskModel();
-        $dataJ = $dataJson->getAllTasks();
-
-        //return $dataJ;
-
-        $this->view->dataJ = $dataJ;
-    }
-
-
-    public function monthlyAction()
-    {
-
-        $dataJ = [];
-
-        $dataJson = new TaskModel();
-        $dataJ = $dataJson->getAllTasks();
-
-        $this->view->dataJ = $dataJ;
-    }
-
-    public function yearlyAction()
-    {
-
-        $dataJ = [];
-
-        $dataJson = new TaskModel();
-        $dataJ = $dataJson->getAllTasks();
-
-        $this->view->dataJ = $dataJ;
+        header("Location: getAllTasks");
+        exit();
     }
 }
