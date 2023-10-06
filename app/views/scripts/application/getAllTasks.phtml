@@ -38,7 +38,7 @@ if (isset($todo)) : ?>
                     <td ><?php echo $task['end_date']; ?></td>
                     <td ><?php echo $task['status']; ?></td>
 
-                    <!-- Pero vamos que me lleva a: ediTask.phtml cogiendo el id de la tarea -->
+                    
                     <td>
                     
                         <form method="post" action="ediTask">
@@ -65,6 +65,6 @@ if (isset($todo)) : ?>
         </tbody>
     </table>
 <?php else : ?>
-    <!-- Cuando $dataMySQL no está disponible -->
+    <!-- Cuando la base de datos no está disponible -->
     <p>DataBase not available.</p>
 <?php endif; ?>
