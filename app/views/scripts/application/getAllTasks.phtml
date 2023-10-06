@@ -28,17 +28,19 @@ if (isset($todo)) : ?>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-            <?php foreach ($todo as $task) : ?>
+            <?php foreach ($todo as $task) : 
 
+                // Parse the task dates in 'yyyy-mm-dd' format
+                $startDate = DateTime::createFromFormat('Y-m-d', $task['starting_date']);
+                $endDate = DateTime::createFromFormat('Y-m-d', $task['end_date']); ?>
+                
                 <tr>
 
                     <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['task_description']; ?></td>
                     <td ><?php echo $task['author']; ?></td>
-                    <td ><?php echo $task['starting_date']; ?></td>
-                    <td ><?php echo $task['end_date']; ?></td>
-                    <td ><?php echo $task['status']; ?></td>
-
-                    
+                    <td ><?php echo $startDate->format('d/m/Y'); ?></td>
+                    <td ><?php echo $endDate->format('d/m/Y'); ?></td>
+                    <td ><?php echo $task['status']; ?></td>  
                     <td>
                     
                         <form method="post" action="ediTask">
@@ -50,6 +52,7 @@ if (isset($todo)) : ?>
                         </form>
                     </td></i>
                     </button>
+                    
                     </td>
                     <td>
                         <form method="post" action="deleteTask">
