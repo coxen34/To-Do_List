@@ -46,5 +46,12 @@ class TaskModel extends Model
             return false;
         }
     }
-    
+
+    public function createTask($newTask)
+    {
+
+        $result = $this->save($newTask);
+
+    }
 }
+
