@@ -54,4 +54,62 @@ class TaskModel extends Model
         $result = $this->save($newTask);
 
     }
+    
+    public function getTaskById($taskId)
+    {
+        try {
+            // SQL query to fetch a task by ID
+            $sql = 'SELECT * FROM ' . $this->_table . ' WHERE id = :taskId';
+            $statement = $this->_dbh->prepare($sql);
+            $statement->bindParam(':taskId', $taskId);
+            $statement->execute();
+
+            // Fetch the task as an associative array
+            $task = $statement->fetch(PDO::FETCH_ASSOC);
+
+            return $task;
+
+        } catch (PDOException $e) {
+            $_SESSION['error_message'] = 'Database error: ' . $e->getMessage();
+            return false;
+
+        }
+
+    }
+
+    public function updateTask($taskId, $updatedTaskData)
+    {
+        try {
+            // SQL query to update a task by ID
+            $sql = 'UPDATE ' . $this->_table . ' SET 
+                    task_description = :taskDescription,
+                    author = :author,
+                    starting_date = :startingDate,
+                    end_date = :endDate,
+                    status = :status
+                    WHERE id = :taskId';
+            
+            // Prepare the SQL statement
+            $statement = $this->_dbh->prepare($sql);
+            
+            // Bind the task ID
+            $statement->bindParam(':taskId', $taskId);
+
+            // Bind the updated task data
+            $statement->bindParam(':taskDescription', $updatedTaskData['task_description']);
+            $statement->bindParam(':author', $updatedTaskData['author']);
+            $statement->bindParam(':startingDate', $updatedTaskData['starting_date']);
+            $statement->bindParam(':endDate', $updatedTaskData['end_date']);
+            $statement->bindParam(':status', $updatedTaskData['status']);
+            
+            // Execute the update query
+            $success = $statement->execute();
+
+            return $success;
+        } catch (PDOException $e) {
+            $_SESSION['error_message'] = 'Database error: ' . $e->getMessage();
+            return false;
+        }
+    }
+ 
 }

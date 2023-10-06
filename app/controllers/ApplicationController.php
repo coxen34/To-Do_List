@@ -56,32 +56,32 @@ class ApplicationController extends Controller
         }
         return $newTask;
     }
-    
+
     // ___________CONTROLADOR EDITAR TAREA_____________
     public function ediTaskAction()
     {
-        // Asigno el valor del input "name:taskId"
-        // Usando el operador ternario "? $_POST["taskId"] : null;", le asigno valor en función de la verificación: "isset($_POST["taskId"])"
-        $taskId = isset($_POST["taskId"]) ? $_POST["taskId"] : null;
-
+        // Retrieve the task ID to edit from the request parameters (e.g., URL or form submission)
+        $taskId = $this->_getParam("taskId");
 
         if ($taskId !== null) {
+            // Initialize the TaskModel
+            $taskModel = $this->initializeObject();
 
-            $taskModel = new TaskModel();
+            // Retrieve the task details for editing
             $taskToEdit = $taskModel->getTaskById($taskId);
 
-            // Existe la tarea con ese id?
             if ($taskToEdit) {
-                // Visualizamos
+                // Pass the task details to the view for displaying the edit form
                 $this->view->taskToEdit = $taskToEdit;
             } else {
-                echo "La tarea no existe.";
+                $_SESSION['error_message'] = 'Task not found.';
             }
         } else {
-            echo "ID de tarea no válido.";
+            $_SESSION['error_message'] = 'Invalid task ID.';
         }
     }
-    // ___________CONTROLADOR UPDATE TAREA_____________
+
+    // ___________CONTROLADOR ACTUALIZAR TAREA_____________
     public function updateTaskAction()
     {
         // Si se recibe una solicitud HTTP POST, recopila datos del formulario
@@ -94,9 +94,6 @@ class ApplicationController extends Controller
             $enDate = $_POST["endDate"];
             $status = $_POST["status"];
 
-            //COMPRUEBO SI ALMACENA LOS DATOS
-            // var_dump($_POST);
-
             // Array con los datos actualizados
             $updatedTask = [
                 "task_description" => $taskDescription,
@@ -106,7 +103,7 @@ class ApplicationController extends Controller
                 "status" => $status
             ];
             //Ya se puede actualizar la tarea
-            $taskModel = new TaskModel();
+            $taskModel = $this->initializeObject();
             $taskModel->updateTask($taskId, $updatedTask);
         }
     }
