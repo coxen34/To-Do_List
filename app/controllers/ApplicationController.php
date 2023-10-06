@@ -170,4 +170,76 @@ class ApplicationController extends Controller
 
     }
 
+    public function monthlyAction()
+    {
+        // Define an array to store the tasks you want to display
+        $tasksToDisplay = [];
+
+        // Get the current date
+        $currentDate = new DateTime();
+
+        $todoObject = $this->initializeObject();
+        $todo = $todoObject->getAllTasks();
+
+        foreach ($todo as $task) {
+
+            // Parse the task dates in 'yyyy-mm-dd' format
+            $startDate = DateTime::createFromFormat('Y-m-d', $task['starting_date']);
+            $endDate = DateTime::createFromFormat('Y-m-d', $task['end_date']);
+    
+            // Check if the task's start date is within the current month
+            if ($startDate->format('Y-m') == $currentDate->format('Y-m')) 
+            {
+                // Check if the task's end date is today or in the future
+                if ($endDate >= $currentDate) 
+                {
+                // Add the task to the array if it meets the criteria
+                $tasksToDisplay[] = $task;
+                }
+
+            }
+
+        }
+    
+        $todo = $tasksToDisplay;
+        $this->view->todo = $todo;
+
+    }
+
+    public function yearlyAction()
+    {
+        // Define an array to store the tasks you want to display
+        $tasksToDisplay = [];
+
+        // Get the current date
+        $currentDate = new DateTime();
+
+        $todoObject = $this->initializeObject();
+        $todo = $todoObject->getAllTasks();
+
+        foreach ($todo as $task) {
+
+            // Parse the task dates in 'yyyy-mm-dd' format
+            $startDate = DateTime::createFromFormat('Y-m-d', $task['starting_date']);
+            $endDate = DateTime::createFromFormat('Y-m-d', $task['end_date']);
+    
+            // Check if the task's start date is within the current month
+            if ($startDate->format('Y') == $currentDate->format('Y')) 
+            {
+                // Check if the task's end date is today or in the future
+                if ($endDate >= $currentDate) 
+                {
+                // Add the task to the array if it meets the criteria
+                $tasksToDisplay[] = $task;
+                }
+
+            }
+
+        }
+    
+        $todo = $tasksToDisplay;
+        $this->view->todo = $todo;
+
+    }
+
 }
