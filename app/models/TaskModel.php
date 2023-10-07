@@ -52,9 +52,8 @@ class TaskModel extends Model
     {
 
         $result = $this->save($newTask);
-
     }
-    
+
     public function getTaskById($taskId)
     {
         try {
@@ -67,14 +66,15 @@ class TaskModel extends Model
             // Fetch the task as an associative array
             $task = $statement->fetch(PDO::FETCH_ASSOC);
 
-            return $task;
+            // Agrego 70,71 líneas de depuración
+            var_dump($task['status']);
+            echo '$TaskModel';
 
+            return $task;
         } catch (PDOException $e) {
             $_SESSION['error_message'] = 'Database error: ' . $e->getMessage();
             return false;
-
         }
-
     }
 
     public function updateTask($taskId, $updatedTaskData)
@@ -88,10 +88,10 @@ class TaskModel extends Model
                     end_date = :endDate,
                     status = :status
                     WHERE id = :taskId';
-            
+
             // Prepare the SQL statement
             $statement = $this->_dbh->prepare($sql);
-            
+
             // Bind the task ID
             $statement->bindParam(':taskId', $taskId);
 
@@ -101,7 +101,7 @@ class TaskModel extends Model
             $statement->bindParam(':startingDate', $updatedTaskData['starting_date']);
             $statement->bindParam(':endDate', $updatedTaskData['end_date']);
             $statement->bindParam(':status', $updatedTaskData['status']);
-            
+
             // Execute the update query
             $success = $statement->execute();
 
@@ -111,5 +111,4 @@ class TaskModel extends Model
             return false;
         }
     }
- 
 }

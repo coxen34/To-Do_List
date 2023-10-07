@@ -70,6 +70,9 @@ class ApplicationController extends Controller
             // Retrieve the task details for editing
             $taskToEdit = $taskModel->getTaskById($taskId);
 
+            var_dump($taskToEdit['status']);
+            echo '$ApplicationController'; // Agrego 73,74 líneas de depuración
+
             if ($taskToEdit) {
                 // Pass the task details to the view for displaying the edit form
                 $this->view->taskToEdit = $taskToEdit;
@@ -79,6 +82,8 @@ class ApplicationController extends Controller
         } else {
             $_SESSION['error_message'] = 'Invalid task ID.';
         }
+        $this->view->taskToEdit = $taskToEdit;
+        
     }
 
     // ___________CONTROLADOR ACTUALIZAR TAREA_____________
@@ -101,11 +106,14 @@ class ApplicationController extends Controller
                 "starting_date" => $startingDate,
                 "end_date" => $enDate,
                 "status" => $status
+                
             ];
+            
             //Ya se puede actualizar la tarea
             $taskModel = $this->initializeObject();
             $taskModel->updateTask($taskId, $updatedTask);
         }
+        
     }
 
     public function deleteTaskAction()
