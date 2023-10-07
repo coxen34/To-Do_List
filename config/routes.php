@@ -20,7 +20,10 @@ $routes = array(
 	'/deleteTask' 	=>	'application#deleteTask',
 	'/createTask'   =>  'application#createTask',
 	'/ediTask'      =>  'application#ediTask',	
-	'/updateTask'   =>  'application#updateTask'
+	'/updateTask'   =>  'application#updateTask',
+	'/pendingTasks'=>'application#pendingTasks',
+	'/ongoingTasks'=>'application#OngoingTasks',
+	'/completedTasks'=>'application#CompletedTasks'
 
 
 

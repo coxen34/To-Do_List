@@ -127,4 +127,32 @@ class ApplicationController extends Controller
         header("Location: getAllTasks");
         exit();
     }
+    public function pendingTasksAction()
+{
+        $pendingObject = $this->initializeObject();
+        $pendingTasks = $pendingObject->getPendingTasks();
+        
+        $this->view->pendingTasks=$pendingTasks;
+
+    
+}
+public function ongoingTasksAction()
+{
+        $ongoingObject = $this->initializeObject();
+        $ongoingTasks = $ongoingObject->getOngoingTasks();
+        
+        $this->view->ongoingTasks=$ongoingTasks;
+
+    
+}
+public function completedTasksAction()
+{
+        $completedObject = $this->initializeObject();
+        $completedTasks = $completedObject->getAllTasks();
+        
+        $this->view->completedTasks=$completedTasks;
+
+    
+}
+
 }

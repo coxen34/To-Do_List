@@ -1,30 +1,28 @@
 <?php
 
-$dataJ = $this->dataJ;
-$foundPendingTask = false;
+$completedTasks = $this->completedTasks;
+$foundCompletedTask = false;
 // Comprobamos si la variable está definida para poder mostrar los datos
-if (isset($dataJ)) : ?>
+if (isset($completedTasks)) : ?>
     <!-- Mostramos los datos en una tabla  -->
     <table style='border:1' class="min-w-full divide-y divide-gray-200">
         <thead>
             <tr>
-                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Task Description</th>
-                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Author</th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider ">Task Description</th>
+                <th class="px-6 py-4 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider ">Author</th>
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Starting Date</th>
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">End Date</th>
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Status</th>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-            <?php
-            foreach ($dataJ as $task) :
-
-                if ($task['status'] === 'Pending') :
-                    $foundPendingTask = true;
+            <?php foreach ($completedTasks as $task) :
+                if ($task['status'] === 'completed') :
+                    $foundCompletedTask = true;
             ?>
                     <tr>
 
-                        <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['task_description']; ?></td>
+                        <td class="px-6 py-3 whitespace-no-wrap"><?php echo $task['task_description']; ?></td>
                         <td><?php echo $task['author']; ?></td>
                         <td><?php echo $task['starting_date']; ?></td>
                         <td><?php echo $task['end_date']; ?></td>
@@ -57,9 +55,9 @@ if (isset($dataJ)) : ?>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <?php if (!$foundPendingTask) : ?>
-        <!-- Cuando no hay tareas pending -->
-        <p>No pending tasks</p>
+    <?php if (!$foundCompletedTask) : ?>
+        <!-- Cuando no hay tareas completed -->
+        <p>No completed tasks</p>
     <?php endif; ?>
 
 <?php else : ?>

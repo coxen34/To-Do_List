@@ -111,5 +111,21 @@ class TaskModel extends Model
             return false;
         }
     }
- 
+    public function getPendingTasks()
+{
+        $sql = 'SELECT * FROM ' . $this->_table . ' WHERE status = "pending"';
+        $statement = $this->_dbh->prepare($sql);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+}
+public function getOngoingTasks()
+{
+        $sql = 'SELECT * FROM ' . $this->_table . ' WHERE status = "ongoing"';
+        $statement = $this->_dbh->prepare($sql);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+}
+
 }
