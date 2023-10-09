@@ -24,7 +24,7 @@ $routes = array(
 
 	'/pendingTasks'=>'application#pendingTasks',
 	'/ongoingTasks'=>'application#OngoingTasks',
-	'/completedTasks'=>'application#CompletedTasks'
+	'/completedTasks'=>'application#CompletedTasks',
 
 	'/weekly'      =>  'application#weekly',	
 	'/monthly'      =>  'application#monthly',	
