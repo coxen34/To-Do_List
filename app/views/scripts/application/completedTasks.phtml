@@ -1,9 +1,9 @@
 <?php
 
-$dataJ = $this->dataJ;
-$foundPendingTask = false;
+$completedTasks = $this->completedTasks;
+$foundCompletedTask = false;
 // Comprobamos si la variable está definida para poder mostrar los datos
-if (isset($dataJ)) : ?>
+if (isset($completedTasks)) : ?>
     <!-- Mostramos los datos en una tabla  -->
     <table style='border:1' class="min-w-full divide-y divide-gray-200">
         <thead>
@@ -16,9 +16,9 @@ if (isset($dataJ)) : ?>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-            <?php foreach ($dataJ as $task) :
-                if ($task['status'] === 'Completed') :
-                    $foundPendingTask = true;
+            <?php foreach ($completedTasks as $task) :
+                if ($task['status'] === 'completed') :
+                    $foundCompletedTask = true;
             ?>
                     <tr>
 
@@ -55,12 +55,12 @@ if (isset($dataJ)) : ?>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <?php if (!$foundPendingTask) : ?>
+    <?php if (!$foundCompletedTask) : ?>
         <!-- Cuando no hay tareas completed -->
         <p>No completed tasks</p>
     <?php endif; ?>
 
 <?php else : ?>
-    <!-- Cuando $dataJ no está definido -->
+    <!-- Cuando $completedTasks no está definido -->
     <p>File not available</p>
 <?php endif; ?>

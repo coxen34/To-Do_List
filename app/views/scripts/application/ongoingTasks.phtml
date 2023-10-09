@@ -1,9 +1,9 @@
 <?php
 
-$dataJ = $this->dataJ;
-$foundPendingTask = false;
+$ongoingTasks = $this->ongoingTasks;
+$foundOngoingTask = false;
 // Comprobamos si la variable está definida para poder mostrar los datos
-if (isset($dataJ)) : ?>
+if (isset($ongoingTasks)) : ?>
     <!-- Mostramos los datos en una tabla  -->
     <table style='border:1' class="min-w-full divide-y divide-gray-200">
         <thead>
@@ -16,23 +16,23 @@ if (isset($dataJ)) : ?>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-            <?php foreach ($dataJ as $task) :
-                if ($task['status'] === 'Ongoing') :
-                    $foundPendingTask = true;
+            <?php foreach ($ongoingTasks as $task) :
+                if ($task->status === 'ongoing') :
+                    $foundOngoingTask = true;
             ?>
                     <tr>
 
-                        <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task['task_description']; ?></td>
-                        <td><?php echo $task['author']; ?></td>
-                        <td><?php echo $task['starting_date']; ?></td>
-                        <td><?php echo $task['end_date']; ?></td>
-                        <td><?php echo $task['status']; ?></td>
+                        <td class="px-6 py-4 whitespace-no-wrap"><?php echo $task->task_description; ?></td>
+                        <td><?php echo $task->author; ?></td>
+                        <td><?php echo $task->starting_date; ?></td>
+                        <td><?php echo $task->end_date; ?></td>
+                        <td><?php echo $task->status; ?></td>
 
                         <!-- Completar descripción de la función form-->
                         <!-- Pero vamos que me lleva a: ediTask.phtml cogiendo el id de la tarea -->
                         <td>
                             <form method="post" action="ediTask">
-                                <input type="hidden" name="taskId" value="<?php echo $task['id']; ?>">
+                                <input type="hidden" name="taskId" value="<?php echo $task->id; ?>">
                                 <!-- el echo de ↑↑ no sé exactamente pq pero si lo quito no almacena el id... -->
                                 <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="buttonEditTask">
                                     <i class="fa-solid fa-pencil"></i>
@@ -43,7 +43,7 @@ if (isset($dataJ)) : ?>
                         </td>
                         <td>
                             <form method="post" action="deleteTask">
-                                <input type="hidden" name="taskId" value="<?php echo $task['id']; ?>">
+                                <input type="hidden" name="taskId" value="<?php echo $task->id; ?>">
                                 <button class="bg-slate-50 w-full mt-3 md:mt-0 h-10 py-4 px-1 md:py-0 md:px-2 rounded hover:bg-blue-300" style="margin-top:-10px;" type="submit" name="">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
@@ -55,12 +55,12 @@ if (isset($dataJ)) : ?>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <?php if (!$foundPendingTask) : ?>
+    <?php if (!$foundOngoingTask) : ?>
         <!-- Cuando no hay tareas ongoing -->
-        <p>No ondoing tasks</p>
+        <p>No ongoing tasks</p>
     <?php endif; ?>
 
 <?php else : ?>
-    <!-- Cuando $dataJ no está definido -->
+    <!-- Cuando ongoingTasks no está definido -->
     <p>File not available</p>
 <?php endif; ?>

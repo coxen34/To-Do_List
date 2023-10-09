@@ -128,6 +128,37 @@ class ApplicationController extends Controller
         exit();
     }
 
+    public function pendingTasksAction()
+{
+        $pendingObject = $this->initializeObject();
+        $pendingTasks = $pendingObject->getPendingTasks();
+        
+        $this->view->pendingTasks=$pendingTasks;
+
+    
+}
+public function ongoingTasksAction()
+{
+        $ongoingObject = $this->initializeObject();
+        $ongoingTasks = $ongoingObject->getOngoingTasks();
+        
+        $this->view->ongoingTasks=$ongoingTasks;
+
+    
+}
+public function completedTasksAction()
+{
+        $completedObject = $this->initializeObject();
+        $completedTasks = $completedObject->getAllTasks();
+        
+        $this->view->completedTasks=$completedTasks;
+
+    
+}
+
+
+
+
     public function weeklyAction()
     {
         // Define an array to store the tasks you want to display
@@ -243,3 +274,4 @@ class ApplicationController extends Controller
     }
 
 }
+
