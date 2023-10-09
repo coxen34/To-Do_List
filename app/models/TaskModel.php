@@ -86,7 +86,7 @@ class TaskModel extends Model
                     author = :author,
                     starting_date = :startingDate,
                     end_date = :endDate,
-                    status = :status
+                    status = :status,
                     WHERE id = :taskId';
             
             // Prepare the SQL statement
