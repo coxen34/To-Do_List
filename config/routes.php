@@ -21,9 +21,16 @@ $routes = array(
 	'/createTask'   =>  'application#createTask',
 	'/ediTask'      =>  'application#ediTask',	
 	'/updateTask'   =>  'application#updateTask',
+
 	'/pendingTasks'=>'application#pendingTasks',
 	'/ongoingTasks'=>'application#OngoingTasks',
 	'/completedTasks'=>'application#CompletedTasks'
+
+	'/weekly'      =>  'application#weekly',	
+	'/monthly'      =>  'application#monthly',	
+	'/yearly'      =>  'application#yearly'
+
+
 
 
 

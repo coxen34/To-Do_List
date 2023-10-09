@@ -127,6 +127,7 @@ class ApplicationController extends Controller
         header("Location: getAllTasks");
         exit();
     }
+
     public function pendingTasksAction()
 {
         $pendingObject = $this->initializeObject();
@@ -155,4 +156,122 @@ public function completedTasksAction()
     
 }
 
+
+
+
+    public function weeklyAction()
+    {
+        // Define an array to store the tasks you want to display
+        $tasksToDisplay = [];
+
+        // Get the current date
+        $currentDate = new DateTime();
+        
+        // Calculate the end date (current date + 7 days)
+        $endDate = clone $currentDate;
+        $endDate->add(new DateInterval('P7D'));
+
+        $todoObject = $this->initializeObject();
+        $todo = $todoObject->getAllTasks();
+
+        foreach ($todo as $task) {
+
+            // Parse the task dates in 'yyyy-mm-dd' format
+            $startDate = DateTime::createFromFormat('Y-m-d', $task['starting_date']);
+
+            if ($startDate >= $currentDate && $startDate <= $endDate) {
+
+                // Add the task to the array if it meets the criteria
+                $tasksToDisplay[] = $task;
+
+            }
+
+            // Check if the task's start date is equal to the current date
+            if ($startDate->format('Y-m-d') == $currentDate->format('Y-m-d')) {
+
+            // Add the task to the array for the current date
+            $tasksToDisplay[] = $task;
+            
+            }   
+
+        }
+
+        $todo = $tasksToDisplay;
+        $this->view->todo = $todo;
+
+    }
+
+    public function monthlyAction()
+    {
+        // Define an array to store the tasks you want to display
+        $tasksToDisplay = [];
+
+        // Get the current date
+        $currentDate = new DateTime();
+
+        $todoObject = $this->initializeObject();
+        $todo = $todoObject->getAllTasks();
+
+        foreach ($todo as $task) {
+
+            // Parse the task dates in 'yyyy-mm-dd' format
+            $startDate = DateTime::createFromFormat('Y-m-d', $task['starting_date']);
+            $endDate = DateTime::createFromFormat('Y-m-d', $task['end_date']);
+    
+            // Check if the task's start date is within the current month
+            if ($startDate->format('Y-m') == $currentDate->format('Y-m')) 
+            {
+                // Check if the task's end date is today or in the future
+                if ($endDate >= $currentDate) 
+                {
+                // Add the task to the array if it meets the criteria
+                $tasksToDisplay[] = $task;
+                }
+
+            }
+
+        }
+    
+        $todo = $tasksToDisplay;
+        $this->view->todo = $todo;
+
+    }
+
+    public function yearlyAction()
+    {
+        // Define an array to store the tasks you want to display
+        $tasksToDisplay = [];
+
+        // Get the current date
+        $currentDate = new DateTime();
+
+        $todoObject = $this->initializeObject();
+        $todo = $todoObject->getAllTasks();
+
+        foreach ($todo as $task) {
+
+            // Parse the task dates in 'yyyy-mm-dd' format
+            $startDate = DateTime::createFromFormat('Y-m-d', $task['starting_date']);
+            $endDate = DateTime::createFromFormat('Y-m-d', $task['end_date']);
+    
+            // Check if the task's start date is within the current month
+            if ($startDate->format('Y') == $currentDate->format('Y')) 
+            {
+                // Check if the task's end date is today or in the future
+                if ($endDate >= $currentDate) 
+                {
+                // Add the task to the array if it meets the criteria
+                $tasksToDisplay[] = $task;
+                }
+
+            }
+
+        }
+    
+        $todo = $tasksToDisplay;
+        $this->view->todo = $todo;
+
+    }
+
 }
+
